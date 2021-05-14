@@ -4,8 +4,11 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>nugaBox | Util</title>
-	<link rel="shortcut icon" href="images/favicon.png">
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>nugaBox | Util</title>
+    <link rel="icon" href="images/favicon.ico">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/fontAwesome.min.css">
     <script src="js/jquery.min.js"></script>
@@ -14,6 +17,11 @@
 	<style>
 		body{font-family:'Apple SD Gothic Neo',sans-serif;font-size:1rem;}
 		h1{padding-top:10px;font-weight:700;}
+        .title { margin-top:20px; }
+        .title > div { display: flex;}
+        .title img { width:50px; height:50px; }
+        .title h1 { font-weight:300; font-size:2em; margin: 0 12px;}
+        .title h1 span { font-weight:700; margin-left:8px;}
 		.custom-control{margin-top:5px;}
 		.custom-control-label{padding-top:2px;cursor:pointer;}
 		.workDs,.pathDs,.tableDs{font-size:.8em;}
@@ -25,11 +33,6 @@
             .pathHotkey > br { display:none;}
             .pathHotkey > span { margin-right:10px; }
         }
-        .title { margin-top:20px; }
-        .title > div { display: flex;}
-        .title img { width:50px; height:50px; }
-        .title h1 { font-weight:300; font-size:2em; margin: 0 12px;}
-        .title h1 span { font-weight:700; margin-left:8px;}
 	</style>
 </head>
 <body>
@@ -219,7 +222,7 @@
 		$.ajax({
 			type : 'post',
 			url : 'action.php',
-			data : $('#siiru').serialize(),
+			data : $('#data').serialize(),
 			dataType : 'json',
 			success : function(data) {
 				outData(data);
