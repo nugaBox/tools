@@ -8,8 +8,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>nugaBox | Util</title>
-    <link rel="icon" href="images/favicon_toolbox.ico">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/fontAwesome.min.css">
     <script src="js/jquery.min.js"></script>
     <script defer src="js/bootstrap.min.js"></script>

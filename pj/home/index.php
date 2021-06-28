@@ -15,6 +15,9 @@ if(!isset($_SESSION['user_id'])){
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="/home/images/favicon.ico">
+    <link rel="shortcut icon" href="<?=$gs_imagesFolder?>favicon_dev2.ico">
+    <link rel="apple-touch-icon" href="<?=$gs_imagesFolder?>favicon_dev2.ico">
+
     <title>Luke's DevLabs</title>
 
     <!-- CSS -->

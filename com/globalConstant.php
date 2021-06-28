@@ -23,7 +23,7 @@ global $gs_pwEncrypt, $gs_pwEncryptTP, $gs_boardEncrypt, $gs_boardEncryptTP, $gs
 global $gs_site, $gs_menuId;
 
 /* 대표 URL */
-$gs_baseURL = 'https://dev.nugabox.com/';
+$gs_baseURL = 'http://dev.nugabox.com/';
 
 /* 기본 경로 설정 */
 $gs_rootDirectory = '/';															/* 시작위치가(index) 있는 디렉토리 */

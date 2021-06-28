@@ -14,6 +14,8 @@ if(isset($_SESSION['user_id'])){
 <meta name="description" content="">
 <meta name="author" content="">
 <link rel="icon" href="<?=$gs_imagesFolder?>favicon.ico">
+<link rel="shortcut icon" href="<?=$gs_imagesFolder?>favicon_dev2.ico">
+<link rel="apple-touch-icon" href="<?=$gs_imagesFolder?>favicon_dev2.ico">
 <title>DevLabs | nugaBox</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" >
 <link rel="stylesheet" href="<?=$gs_cssFolder?>style.css">

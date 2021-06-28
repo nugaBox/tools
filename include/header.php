@@ -8,6 +8,8 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<link rel="icon" href="<?=$gs_imagesFolder?>favicon_dev2.ico">
+    <link rel="shortcut icon" href="<?=$gs_imagesFolder?>favicon_dev2.ico">
+    <link rel="apple-touch-icon" href="<?=$gs_imagesFolder?>favicon_dev2.ico">
 	<title>DevLabs | nugaBox</title>
 
 	<!-- CSS -->
