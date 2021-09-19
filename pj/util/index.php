@@ -16,6 +16,8 @@
     <script src="js/jquery.min.js"></script>
     <script defer src="js/bootstrap.min.js"></script>
     <script defer src="js/jquery.slimscroll.min.js"></script>
+    <script src="js/clipboard.min.js"></script>
+    <script defer src="js/specialChar.js"></script>
 	<style>
 		body{font-family:'Apple SD Gothic Neo',sans-serif;font-size:1rem;}
 		h1{padding-top:10px;font-weight:700;}
@@ -24,17 +26,28 @@
         .title img { width:50px; height:50px; }
         .title h1 { font-weight:300; font-size:2em; margin: 0 12px;}
         .title h1 span { font-weight:700; margin-left:8px;}
+        .card-header{padding: .8rem 1rem;}
+        .card i {margin-right:5px;}
+        /* Slash in Path */
+        .pathLayout .select-row {display:flex;}
+        .pathLayout .select-row div {margin-right:15px;}
 		.custom-control{margin-top:5px;}
 		.custom-control-label{padding-top:2px;cursor:pointer;}
-		.workDs,.pathDs,.tableDs{font-size:.8em;}
         .copy-btn {display: block; position: absolute; bottom: 10px; right: 10px; border: solid 1px #d6d8db; padding: 4px 8px 2px; border-radius: 5px;}
         .custom-control-input:checked~.custom-control-label::before { border-color: #B13B3E; background-color: #B13B3E;}
         .pathHotkey > i { margin-right:6px;}
         .pathHotkey > span { margin-bottom:8px; }
+        .unicodeDs,.pathDs,.{font-size:.8em;}
         @media all and (min-width:768px) {
             .pathHotkey > br { display:none;}
             .pathHotkey > span { margin-right:10px; }
         }
+        /* Special Character */
+        .accordion-button {padding: .6rem 1.25rem;}
+        .btn-default {color: #333; background-color: #fff; border-color: #ccc;}
+        .btn-character-sm {min-width: 35px !important; font-size: 18px; margin: 2px; padding: 4px 4px;}
+        .btn-default:hover {color: #333; background-color: #e6e6e6; border-color: #adadad;}
+        .btn-character-sm:hover {border: 0px solid white;}
 	</style>
 </head>
 <body>
@@ -43,55 +56,17 @@
 	<div class="row title">
 		<div class="col-12">
 			<img src="/images/nuga_circle.png" alt="Persona" class="login-img" />
-			<h1>DevLabs<span>Util</span></h1>
-		</div>
-	</div>
-	<div class="row mt-3 unicodeLayout">
-		<div class="col-12">
-			<div class="card">
-				<h5 class="card-header"><i class="fad fa-code" aria-hidden="true"></i> UniCode</h5>
-				<div class="card-body">
-					<div class="form-row">
-						<label for="kor" class="col-3 col-lg-1 col-form-label text-right">한글</label>
-						<div class="col-9 col-lg-11">
-							<div class="input-group">
-								<input type="text" class="form-control" id="kor" name="kor" value="">
-								<div class="input-group-append">
-									<button type="button" class="btn btn-secondary" data-action="K"><i class="far fa-exchange-alt"></i> 변환</button>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="form-row mt-2">
-						<label for="unicode" class="col-3 col-lg-1 col-form-label text-right">UniCode</label>
-						<div class="col-9 col-lg-11">
-							<div class="input-group">
-								<input type="text" class="form-control" id="unicode" name="unicode" value="">
-								<div class="input-group-append">
-									<button type="button" class="btn btn-secondary" data-action="U"><i class="far fa-exchange-alt"></i> 변환</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="card-footer">
-					<div class="row">
-						<div class="col-12">
-							<div class="unicodeDs alert alert-secondary mb-0" role="alert">&nbsp;<a class="copy-btn" href="#" data-category="unicode"><i class="fad fa-clipboard" aria-hidden="true"></i></a></div>
-						</div>
-					</div>
-				</div>
-			</div>
+			<h1>nugaBox<span>Util</span></h1>
 		</div>
 	</div>
 	<div class="row mt-3 pathLayout">
 		<div class="col-12">
 			<div class="card">
-				<h5 class="card-header"><i class="fad fa-terminal" aria-hidden="true"></i> Slash in Path</h5>
+				<h5 class="card-header"><i class="fad fa-keyboard" aria-hidden="true"></i> Slash in Path</h5>
 				<div class="card-body">
-					<div class="form-row">
-                        <label for="slashTp" class="col-2 col-lg-1 col-form-label text-right"></label>
-						<div class="col-10 col-lg-11">
+					<div class="row">
+                        <label for="slashTp" class="col-2 col-lg-1 col-form-label text-right">선택</label>
+						<div class="col-10 col-lg-11 select-row">
                             <div class="custom-control custom-radio custom-control-inline">
                                 <input type="radio" id="slashTp1" name="slashTp" class="custom-control-input" value="slashTp1" checked>
                                 <label class="custom-control-label" for="slashTp1"> <i class="fab fa-windows" aria-hidden="true"></i> <i class="far fa-arrow-right" aria-hidden="true"></i> <i class="fab fa-apple" aria-hidden="true"></i> </label>
@@ -106,7 +81,7 @@
                             </div>
 						</div>
 					</div>
-					<div class="form-row mt-2">
+					<div class="row mt-2">
 						<label for="keyword" class="col-2 col-lg-1 col-form-label text-right">경로</label>
 						<div class="col-10 col-lg-11">
 							<div class="input-group">
@@ -129,122 +104,231 @@
 			</div>
 		</div>
 	</div>
+    <div class="row mt-3 specialLayout">
+        <div class="col-12">
+            <div class="card">
+                <h5 class="card-header">
+                    <div class="row">
+                        <div class="col-12">
+                            <i class="fad fa-alicorn" aria-hidden="true"></i> Special Character
+                        </div>
+                    </div>
+                </h5>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div id="specialCharOutput"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3 unicodeLayout">
+        <div class="col-12">
+            <div class="card">
+                <h5 class="card-header"><i class="fad fa-language" aria-hidden="true"></i> UniCode</h5>
+                <div class="card-body">
+                    <div class="row">
+                        <label for="kor" class="col-3 col-lg-1 col-form-label text-right">한글</label>
+                        <div class="col-9 col-lg-11">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="kor" name="kor" value="">
+                                <div class="input-group-append">
+                                    <button type="button" class="btn btn-secondary" data-action="K"><i class="far fa-exchange-alt"></i> 변환</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <label for="unicode" class="col-3 col-lg-1 col-form-label text-right">UniCode</label>
+                        <div class="col-9 col-lg-11">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="unicode" name="unicode" value="">
+                                <div class="input-group-append">
+                                    <button type="button" class="btn btn-secondary" data-action="U"><i class="far fa-exchange-alt"></i> 변환</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="alert alert-secondary mb-0" role="alert"><pre class="unicodeDs"></pre><a class="copy-btn" href="#" data-category="unicode"><i class="fad fa-clipboard" aria-hidden="true"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 <!--	</form>-->
 </div>
-<script type="text/javascript">
-	$(document).ready(function() {
-		// 출력폼
-		$('.workDs,.pathDs').slimScroll({height:'50px',start:'bottom'});
+<script>
+if(window.console!=undefined){
+    setTimeout(console.log.bind(console,"%c https://nugabox.github.io","font:2em Arial;color:#333;"),0);
+    setTimeout(console.log.bind(console,"%c ¯＼(º_o)/¯","font:8em Arial;color:#1e73be;font-weight:bold"),0);
+}
+$(document).ready(function() {
+    // 출력폼
+    $('.workDs,.pathDs').slimScroll({height:'50px',start:'bottom'});
 
-		// UniCode
-		$('.unicodeLayout .btn').click(function() {
-			var str = '';
-			if ($(this).data('action') == 'K') {
-				if ($.trim($('#kor').val()) != '') {
-					str = escape($.trim($('#kor').val()));
-					str = str.split("%").join("\\");
-					str = str.split("\\20").join(" ");
-					$('.unicodeDs').html('<span class="text-success">'+$.trim(str)+'</span>');
-				}
-			} else {
-				if ($.trim($('#unicode').val()) != '') {
-					str = $.trim($('#unicode').val());
-					str = unescape(str.split("\\").join("%"));
-					$('.unicodeDs').html('<span class="text-success">'+$.trim(str)+'</span>');
-				}
-			}
-		});
-		// Slash in Path
-		$('.pathLayout .btn').click(function() {
-		    var str = '';
-            var slashTp = $(":input:radio[name=slashTp]:checked").val().right(1);
-            var cominPathYn = $('#cominPath').val();
-            var cominboxArr = ["dat", "datback", "hndvr", "lecture", "pgm", "photo"];
-            var cominfileArr = ["siiru", "devtools", "scan", "공공교육사업본부", "더블스타", "정보기술연구소", "제조금융사업본부"];
+    // 유니코드 변환
+    $('.unicodeLayout .btn').click(function() {
+        var str = '';
+        if ($(this).data('action') == 'K') {
+            if ($.trim($('#kor').val()) != '') {
+                str = escape($.trim($('#kor').val()));
+                str = str.split("%").join("\\");
+                str = str.split("\\20").join(" ");
+                $('.unicodeDs').html('<span class="text-success">'+$.trim(str)+'</span>');
+            }
+        } else {
+            if ($.trim($('#unicode').val()) != '') {
+                str = $.trim($('#unicode').val());
+                str = unescape(str.split("\\").join("%"));
+                $('.unicodeDs').html('<span class="text-success">'+$.trim(str)+'</span>');
+            }
+        }
+    });
 
-            // BackSlash to Slash (Win -> Mac)
-            if (slashTp == '1' && $.trim($('#path').val()) != '') {
-                str = $.trim($('#path').val());
-                var strArr = str.split("\\");
-                // var strArr2 = strArr[2].toLowerCase();
-                // Comin NAS
-                if (cominPathYn == 'Y') {
-                    if (strArr[2] == "cominfile" || strArr[2] == "cominbox" || strArr[2] == "cominFile" || strArr[2] == "cominBox" || strArr[2] == "192.168.1.7" || strArr[2] == "192.168.1.8") {
-                        strArr[2] = 'Volumes';
-                        strArr.splice(0, 1);
+    // 경로 변환
+    $('.pathLayout .btn').click(function() {
+        var str = '';
+        var slashTp = $(":input:radio[name=slashTp]:checked").val().right(1);
+        var cominPathYn = $('#cominPath').val();
+        var cominboxArr = ["dat", "datback", "hndvr", "lecture", "pgm", "photo"];
+        var cominfileArr = ["siiru", "devtools", "scan", "공공교육사업본부", "더블스타", "정보기술연구소", "제조금융사업본부"];
+
+        // BackSlash to Slash (Win -> Mac)
+        if (slashTp == '1' && $.trim($('#path').val()) != '') {
+            str = $.trim($('#path').val());
+            var strArr = str.split("\\");
+            // var strArr2 = strArr[2].toLowerCase();
+            // Comin NAS
+            if (cominPathYn == 'Y') {
+                if (strArr[2] == "cominfile" || strArr[2] == "cominbox" || strArr[2] == "cominFile" || strArr[2] == "cominBox" || strArr[2] == "192.168.1.7" || strArr[2] == "192.168.1.8") {
+                    strArr[2] = 'Volumes';
+                    strArr.splice(0, 1);
+                }
+            }
+            str = strArr.join("/");
+            $('.pathDs').html('<span class="text-success">' + $.trim(str) + '</span>');
+        }
+        // Slash to BackSlash (Mac -> Win)
+        else if (slashTp == '2' && $.trim($('#path').val()) != '') {
+            str = $.trim($('#path').val());
+            var strArr = str.split("/");
+            // Comin NAS
+            if (cominPathYn == 'Y') {
+                if (strArr[1] == 'Volumes') {
+                    if($.inArray(strArr[2], cominboxArr) != -1) {
+                        strArr[1] = '\\cominBox';
+                    } else if($.inArray(strArr[2], cominfileArr) != -1) {
+                        strArr[1] = '\\cominFile';
                     }
                 }
-                str = strArr.join("/");
-                $('.pathDs').html('<span class="text-success">' + $.trim(str) + '</span>');
             }
-            // Slash to BackSlash (Mac -> Win)
-            else if (slashTp == '2' && $.trim($('#path').val()) != '') {
-                str = $.trim($('#path').val());
-                var strArr = str.split("/");
-                // Comin NAS
-                if (cominPathYn == 'Y') {
-                    if (strArr[1] == 'Volumes') {
-                        if($.inArray(strArr[2], cominboxArr) != -1) {
-                            strArr[1] = '\\cominBox';
-                        } else if($.inArray(strArr[2], cominfileArr) != -1) {
-                            strArr[1] = '\\cominFile';
-                        }
-                    }
-                }
-                str = strArr.join("\\");
-                $('.pathDs').html('<span class="text-success">' + $.trim(str) + '</span>');
+            str = strArr.join("\\");
+            $('.pathDs').html('<span class="text-success">' + $.trim(str) + '</span>');
+        }
+    });
+    $("input:radio[name=slashTp]").click(function() {
+        var slashTp = $(this).val().right(1);
+        if(slashTp == '1') $('#path').attr('placeholder',"BackSlash(\\) → Slash(/)");
+        else $('#path').attr('placeholder',"Slash(/) → BackSlash(\\)");
+    })
+    $('#cominPath').click(function(){
+        if($(this).val() == 'Y') $(this).val('N');
+        else $(this).val('Y');
+    })
+    $('.copy-btn').click(function(){
+        var category = $(this).data('category') + 'Ds';
+        var str = $('.'+category).children('.text-success').text();
+        copyToClipboard(str);
+    })
+
+    // 특수 기호
+    var specialCharOutput = "";
+    var char_idx = 1;
+    specialCharOutput += "<div class='accordion'>";
+    for(var key in specialChar){
+        specialCharOutput += "<div class='accordion-item' id='char"+char_idx+"'>";
+        specialCharOutput += "<h2 class='accordion-header' id='char"+char_idx+"-headingOne'>";
+        if(key == "도형 문자" || key == "문장 부호") {
+            specialCharOutput += "<button class='accordion-button' type='button' data-bs-toggle='collapse' data-bs-target='#char" + char_idx + "-collapseOne' aria-expanded='true' aria-controls='" + char_idx + "-collapseOne'>";
+            specialCharOutput += key;
+            specialCharOutput += "</button></h2>";
+            specialCharOutput += "<div id='char"+char_idx+"-collapseOne' class='accordion-collapse collapse show' aria-labelledby='char"+char_idx+"-headingOne'>";
+        }
+        else {
+            specialCharOutput += "<button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#char" + char_idx + "-collapseOne' aria-expanded='false' aria-controls='" + char_idx + "-collapseOne'>";
+            specialCharOutput += key;
+            specialCharOutput += "</button></h2>";
+            specialCharOutput += "<div id='char"+char_idx+"-collapseOne' class='accordion-collapse collapse' aria-labelledby='char"+char_idx+"-headingOne'>";
+        }
+        specialCharOutput += "<div class='accordion-body'>";
+
+        var charList = specialChar[key];
+        for(var idx in charList){
+            var char = charList[idx];
+            if(key == "공백"){
+                specialCharOutput += "<button type='button' class='btn btn-default btn-character-sm' value='"+char+"'><span style='background-color:#cbd5e0'>"+char+"</span></button>"
+            }else{
+                specialCharOutput += "<input type='button' class='btn btn-default btn-character-sm' value='"+char+"'/>"
             }
-		});
-        $("input:radio[name=slashTp]").click(function() {
-            var slashTp = $(this).val().right(1);
-            if(slashTp == '1') $('#path').attr('placeholder',"BackSlash(\\) → Slash(/)");
-            else $('#path').attr('placeholder',"Slash(/) → BackSlash(\\)");
-        })
-        $('#cominPath').click(function(){
-            if($(this).val() == 'Y') $(this).val('N');
-            else $(this).val('Y');
-        })
-        $('.copy-btn').click(function(){
-            var category = $(this).data('category') + 'Ds';
-            var str = $('.'+category).children('.text-success').text();
-            copyToClipboard(str);
-        })
-	});
-	// 화면 이동
-	// function scrollMove(obj) {
-	// 	var scmove = obj.offset().top;
-	// 	$('html, body').animate({scrollTop : scmove}, 'slow');
-	// }
-	// 숫자 3자리 단위마다 콤마(comma)
-	function numberWithCommas(x) {
-		return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-	}
-	// ajax 전송
-	function ajaxForm(outData) {
-		$.ajax({
-			type : 'post',
-			url : 'action.php',
-			data : $('#data').serialize(),
-			dataType : 'json',
-			success : function(data) {
-				outData(data);
-			}
-		});
-	}
-	// right substr 사용하기
-    String.prototype.right = function(length){
-        if(this.length <= length) return this;
-        else return this.substring(this.length - length, this.length);
+        }
+        specialCharOutput += "</div></div></div>";
+        char_idx++;
     }
-    // 클립보드 복사 함수
-    function copyToClipboard(val) {
-        var t = document.createElement("textarea");
-        document.body.appendChild(t);
-        t.value = val;
-        t.select();
-        document.execCommand('copy');
-        document.body.removeChild(t);
+    specialCharOutput += "</div>";
+    $("#specialCharOutput").html(specialCharOutput);
+});
+// 숫자 3자리 단위마다 콤마(comma)
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+// right substr 사용하기
+String.prototype.right = function(length){
+    if(this.length <= length) return this;
+    else return this.substring(this.length - length, this.length);
+}
+// 클립보드 복사 함수
+function copyToClipboard(val) {
+    var t = document.createElement("textarea");
+    document.body.appendChild(t);
+    t.value = val;
+    t.select();
+    document.execCommand('copy');
+    document.body.removeChild(t);
+}
+// 특수문자 클릭 시 복사
+new ClipboardJS('#specialCharOutput .btn', {
+    text: function(trigger) {
+        $("#multiCopy input").val($("#multiCopy input").val()+trigger.getAttribute('value'));
+        $(trigger).tooltip({title: '복사 ✅', trigger: 'manual'});
+        $(trigger).tooltip('show');
+        setTimeout(function(){$(trigger).tooltip('hide');}, 1000);
+        return trigger.getAttribute('value');
     }
+});
+// ajax 전송
+// function ajaxForm(outData) {
+//     $.ajax({
+//         type : 'post',
+//         url : '',
+//         data : $('#data').serialize(),
+//         dataType : 'json',
+//         success : function(data) {
+//             outData(data);
+//         }
+//     });
+// }
+// 화면 이동
+// function scrollMove(obj) {
+// 	var scmove = obj.offset().top;
+// 	$('html, body').animate({scrollTop : scmove}, 'slow');
+// }
 </script>
 </body>
 </html>
