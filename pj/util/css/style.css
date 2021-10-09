@@ -1,6 +1,9 @@
 @charset "utf-8";
 body{font-family:'Apple SD Gothic Neo',sans-serif;font-size:1rem;}
 h1{padding-top:10px;font-weight:700;}
+header {--bs-bg-opacity: 1; background-color:#272b35}
+header .container {max-width: 900px; }
+.logo {width:300px;}
 .container-fluid { max-width: 900px; margin-bottom: 30px; }
 .title { margin-top:20px; }
 .title > div { display: flex;}
@@ -32,3 +35,15 @@ h1{padding-top:10px;font-weight:700;}
 .btn-default:hover {color: #333; background-color: #e6e6e6; border-color: #adadad;}
 .btn-character-sm:hover {border: 0px solid white;}
 footer {color: #606161}
+footer a {color: #606161; font-weight:bold; text-decoration: none;}
+.bd-callout {
+    padding: 1.25rem;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid #e9ecef;
+    border-left-width: .25rem;
+    border-radius: .25rem;
+}
+.bd-callout-info {
+    border-left-color: #5bc0de;
+}

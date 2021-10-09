@@ -1,14 +1,31 @@
 if(window.console!=undefined){
-    setTimeout(console.log.bind(console,"%c nugaBox DevLabs","font:2em Arial;color:#333;"),0);
-    setTimeout(console.log.bind(console,"%c '◡'","font:8em Arial;color:#1e73be;font-weight:bold"),0);
+    setTimeout(console.log.bind(console,"%c nugaBox DevLabs Tools","font:2em Arial;color:#7c7c7c;"),0);
+    setTimeout(console.log.bind(console,"%c '◡' by NUGA","font:3em Arial;color:#1e73be;font-weight:bold"),0);
 }
 $(document).ready(function() {
     // 출력폼
     $('.workDs,.pathDs').slimScroll({height:'50px',start:'bottom'});
 
-    // 이메일 서명 만들기
+    /**
+     *  이메일 서명 생성기
+     *  @id signGen
+     */
+    $('.section#signGen :checkbox').change(function(){
+        if ($(this).is(':checked')) {
+            $(this).val('Y');
+        } else {
+            $(this).val('N');
+        }
+    });
+    $('#sign-color').change(function(){
+        $('#sign-colorCd').val($(this).val());
+    });
+    $('#sign-colorCd').change(function(){
+        $('#sign-color').val($(this).val());
+    });
+    // 서명 생성
     $('.section#signGen .btn').click(function() {
-        // 서명 생성
+        // 코드 생성
         if ($(this).data('action') == 'G') {
             var formData = $('#signForm').serialize()+'&action=G';
             $.ajax({
@@ -21,14 +38,36 @@ $(document).ready(function() {
                 $('.signGenDs').html('<span class="text-success">생성된 코드가 클립보드에 복사되었습니다. <br>이메일 서명에 \'HTML\'로 붙여넣기 해주세요.</span>');
             });
         }
-        // 서명 미리보기 (새창)
+        // 미리보기 (새창)
         else if ($(this).data('action') == 'P') {
-            win = open('','preview','width=550,height=200');
+            win = open('','preview','width=550,height=300');
             $('#signForm').submit();
         }
     });
 
-    // 유니코드 변환
+    /**
+     * 포트 오픈 확인
+     * @id port_open
+     */
+    $('.section#port_open .btn').click(function() {
+        // 코드 생성
+        if ($(this).data('action') == 'O') {
+            var open_ip = $('#open_ip').val();
+            var open_port = $('#open_port').val();
+            $.ajax({
+                url: "/tools/action.php",
+                type: "post",
+                data: {ip: open_ip, port:open_port, action:'O'}
+            }).done(function (data) {
+                $('.port_openDs').html('<span class="text-success">결과 : '+data+'</span>');
+            });
+        }
+    });
+
+    /**
+     * 유니코드 변환
+     * @id kor_uni
+     */
     $('.section#kor_uni .btn').click(function() {
         var str = '';
         if ($(this).data('action') == 'K') {
@@ -47,7 +86,31 @@ $(document).ready(function() {
         }
     });
 
-    // 경로 변환
+    /**
+     * 퓨니코드 변환
+     * @id kor_puny
+     */
+    $('.section#kor_puny .btn').click(function() {
+        var str = '';
+        if ($(this).data('action') == 'K') {
+            if ($.trim($('#korDomain').val()) != '') {
+                str = $.trim($('#korDomain').val());
+                str = punycode.toASCII(str);
+                $('.punycodeDs').html('<span class="text-success">'+$.trim(str)+'</span>');
+            }
+        } else {
+            if ($.trim($('#punycode').val()) != '') {
+                str = $.trim($('#punycode').val());
+                str = punycode.toUnicode(str);
+                $('.punycodeDs').html('<span class="text-success">'+$.trim(str)+'</span>');
+            }
+        }
+    });
+
+    /**
+     * 경로 변환
+     * @id slash
+     */
     $('.section#slash .btn').click(function() {
         var str = '';
         var slashTp = $(":input:radio[name=slashTp]:checked").val().right(1);
@@ -103,7 +166,10 @@ $(document).ready(function() {
         copyToClipboard(str);
     })
 
-    // 특수 기호
+    /**
+     * 특수 기호
+     * @id specialChar
+     */
     var specialCharOutput = "";
     var char_idx = 1;
     specialCharOutput += "<div class='accordion'>";
@@ -148,6 +214,7 @@ String.prototype.right = function(length){
     if(this.length <= length) return this;
     else return this.substring(this.length - length, this.length);
 }
+// HTML 코드 XSS 방지
 function escapeHtml(str) {
     var map = {
         '&': '&amp;',

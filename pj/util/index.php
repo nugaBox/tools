@@ -1,12 +1,3 @@
-<?php
-$str = $_POST['sign-userNm'];
-if ($str != null){
-    $result = "당신은 '{$str}'이라고 썼습니다.";
-} else {
-    $result = "아무것도 쓴 것이 없습니다.";
-}
-?>
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -28,34 +19,52 @@ if ($str != null){
     <script defer src="js/bootstrap.min.js"></script>
     <script defer src="js/bootstrap-colorpicker.min.js"></script>
     <script defer src="js/jquery.slimscroll.min.js"></script>
+    <script defer src="js/punycode.js"></script>
     <script src="js/clipboard.min.js"></script>
     <script defer src="js/specialChar.js"></script>
     <script defer src="js/script.js"></script>
 </head>
 <body>
-<div class="container-fluid">
-	<div class="row title">
-		<div class="col-12">
-            <a href="https://nugabox.com"><img src="/images/nuga_circle.png" alt="Persona" class="login-img" /><h1>nugaBox</h1></a><h1><span>Util</span></h1>
-		</div>
-	</div>
-    <div class="section row mt-3" id="myip">
-        <div class="col-12">
-            <div class="card">
-                <h5 class="card-header"><i class="fad fa-router" aria-hidden="true"></i> My IP</h5>
-                <div class="card-footer">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="alert alert-secondary mb-0" role="alert">
-                                <pre class="myipDs"><span class="text-success"><?=$_SERVER["REMOTE_ADDR"]?></span></pre>
-                                <a class="copy-btn" href="#" data-category="myip"><i class="fad fa-clipboard" aria-hidden="true"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<style>
+
+</style>
+<header class="p-3 text-white">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center col-lg-6 mb-2 mb-lg-0 text-white text-decoration-none">
+                <img src="images/banner_tools.png" alt="logo" class="logo" />
+            </a>
+            <div class="col-lg-3"></div>
+            <ul class="nav col-12 col-lg-3 me-lg-auto mb-2 justify-content-center mb-md-0 ">
+                <li><a href="/tools" class="nav-link px-2 text-white">일반 도구</a></li>
+                <li><a href="/tools/dev" class="nav-link px-2 text-secondary">개발 도구</a></li>
+                <li class="dropdown ms-3">
+                    <a href="#" class="d-block link-light text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="images/nuga_circle.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                    </a>
+                    <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+                        <li><a class="dropdown-item" href="https://nugabox.com">NUGABOX</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="https://dev.nugabox.com" target="_blank">DevLabs</a></li>
+                        <li><a class="dropdown-item" href="https://wiki.nugabox.io/" target="_blank">개발위키</a></li>
+                        <li><a class="dropdown-item" href="https://velog.io/@nugabox" target="_blank">Velog</a></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </div>
+</header>
+<div class="container-fluid">
+    <div class="bd-callout bd-callout-info">
+        <h3>Keep Going, Keep Smart</h3>
+        <h6>Last Update : 2021.10.10</h6>
+    </div>
+<!--	<div class="row title">-->
+<!--		<div class="col-12">-->
+<!--            <a href="https://nugabox.com"><img src="/images/nuga_circle.png" alt="Persona" class="login-img" /><h1>nugaBox</h1></a><h1><span>Util</span></h1>-->
+<!--		</div>-->
+<!--	</div>-->
+    <!-- 경로 변환 -->
 	<div class="section row mt-3" id="slash">
 		<div class="col-12">
 			<div class="card">
@@ -99,6 +108,7 @@ if ($str != null){
 			</div>
 		</div>
 	</div>
+    <!-- 특수문자 -->
     <div class="section row mt-3" id="specialChar">
         <div class="col-12">
             <div class="card">
@@ -119,10 +129,11 @@ if ($str != null){
             </div>
         </div>
     </div>
+    <!-- HTML 서명 생성기 -->
     <div class="section row mt-3" id="signGen">
         <div class="col-12">
             <div class="card">
-                <h5 class="card-header"><i class="fad fa-id-card" aria-hidden="true"></i> E-mail Signature Generator</h5>
+                <h5 class="card-header"><i class="fad fa-id-card" aria-hidden="true"></i> HTML Signature Generator</h5>
                 <div class="card-body">
                     <form id="signForm" action="action.php" target="preview" method="post">
                         <input type="hidden" name="action" value="P">
@@ -190,21 +201,7 @@ if ($str != null){
                             </div>
                         </div>
                         <div class="row mt-2">
-                            <label for="sign-telinfo" class="col-3 col-md-2 col-form-label text-right">선택사항</label>
-                            <div class="col-9 col-md-10">
-                                <div class="input-group">
-                                    <div class="input-group-text col-5 col-md-2">
-                                        <div class="form-check form-switch">
-                                            <input class="form-check-input" type="checkbox" id="sign-tel-faxYn" name="sign-tel-faxYn" value="N">
-                                            <label class="form-check-label" for="sign-tel-faxYn">FAX</label>
-                                        </div>
-                                    </div>
-                                    <input type="tel" class="form-control col-7 col-md-10" id="sign-tel-fax" name="sign-tel-fax" placeholder="직장 FAX번호" value="062-676-4869">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row mt-2">
-                            <label for="sign-telinfo" class="col-3 col-md-2 col-form-label text-right"></label>
+                            <label for="sign-select" class="col-3 col-md-2 col-form-label text-right">선택사항</label>
                             <div class="col-9 col-md-10">
                                 <div class="input-group">
                                     <div class="input-group-text col-5 col-md-2">
@@ -214,6 +211,20 @@ if ($str != null){
                                         </div>
                                     </div>
                                     <input type="tel" class="form-control col-7 col-md-10" id="sign-tel-direct" name="sign-tel-direct" placeholder="직통 전화번호" value="070-0000-0000">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <label for="sign-select" class="col-3 col-md-2 col-form-label text-right"></label>
+                            <div class="col-9 col-md-10">
+                                <div class="input-group">
+                                    <div class="input-group-text col-5 col-md-2">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" id="sign-tel-faxYn" name="sign-tel-faxYn" value="N">
+                                            <label class="form-check-label" for="sign-tel-faxYn">FAX</label>
+                                        </div>
+                                    </div>
+                                    <input type="tel" class="form-control col-7 col-md-10" id="sign-tel-fax" name="sign-tel-fax" placeholder="직장 FAX번호" value="062-676-4869">
                                 </div>
                             </div>
                         </div>
@@ -262,42 +273,8 @@ if ($str != null){
             </div>
         </div>
     </div>
-    <div class="section row mt-3" id="kor_uni">
-        <div class="col-12">
-            <div class="card">
-                <h5 class="card-header"><i class="fad fa-language" aria-hidden="true"></i> UniCode</h5>
-                <div class="card-body">
-                    <div class="row">
-                        <label for="kor" class="col-3 col-lg-1 col-form-label text-right">한글</label>
-                        <div class="col-9 col-lg-11">
-                            <div class="input-group">
-                                <input type="text" class="form-control" id="kor" name="kor" value="">
-                                <button type="button" class="btn btn-secondary" data-action="K"><i class="far fa-exchange-alt"></i> 변환</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mt-2">
-                        <label for="unicode" class="col-3 col-lg-1 col-form-label text-right">UniCode</label>
-                        <div class="col-9 col-lg-11">
-                            <div class="input-group">
-                                <input type="text" class="form-control" id="unicode" name="unicode" value="">
-                                <button type="button" class="btn btn-secondary" data-action="U"><i class="far fa-exchange-alt"></i> 변환</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="alert alert-secondary mb-0" role="alert"><pre class="unicodeDs"></pre><a class="copy-btn" href="#" data-category="unicode"><i class="fad fa-clipboard" aria-hidden="true"></i></a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <footer>
-        <p class="text-center mt-4">Copyright <script>document.write(new Date().getFullYear());</script> NUGABOX. All rights reserved.</p>
+        <p class="text-center mt-4">Copyright <script>document.write(new Date().getFullYear());</script> <a href="https://nugabox.com" target="_blank">NUGABOX</a>. All rights reserved.</p>
     </footer>
 </div>
 </body>

@@ -1,12 +1,9 @@
 <?php
-// author_  누가
-// date_    2020.05.25
-// file_    getData_soo.php
-// program_ 수영로 설교내용 HTML 파싱
-// param_   mcode : 설교구분 / regdate : 등록일자 / seq : 설교번호
 
 try {
     $action = $_POST['action'];
+
+    // 이메일 서명 생성기
     if($action == 'G' || $action == 'P' ) {
         $sign_userNm = explode(' ',$_POST['sign-userNm']);
         $sign_comNm = $_POST['sign-comNm'];
@@ -49,6 +46,20 @@ try {
         $sign_code.= '    </span>';
         $sign_code.= '</div>';
         $result = $sign_code;
+    }
+    // 포트 오픈 확인
+    else if($action == 'O' ) {
+        $ip = $_POST['ip'];
+        $port = $_POST['port'];
+        $timeout = 5;
+        $fp = @fsockopen($ip,$port,$errno,$errstr,$timeout);
+        if ( is_resource($fp) ) {
+            $result = 'Open';
+            fclose($fp);
+        } else {
+            $result = 'Close';
+            //echo $errno.' : '.$errstr.'<br />'; // 오류 정보 출력
+        }
     }
 }
 catch(exception $e) {
