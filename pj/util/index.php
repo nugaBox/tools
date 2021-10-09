@@ -1,3 +1,12 @@
+<?php
+$str = $_POST['sign-userNm'];
+if ($str != null){
+    $result = "당신은 '{$str}'이라고 썼습니다.";
+} else {
+    $result = "아무것도 쓴 것이 없습니다.";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -5,90 +14,76 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex,nofollow" />
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="누가의 유틸 모음">
+    <meta name="author" content="Nuga Jang">
     <title>nugaBox | Util</title>
     <link rel="icon" href="images/favicon.ico">
     <link rel="shortcut icon" href="images/favicon.ico">
     <link rel="apple-touch-icon" href="images/favicon.ico">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-colorpicker.min.css">
 	<link rel="stylesheet" href="css/fontAwesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery.min.js"></script>
     <script defer src="js/bootstrap.min.js"></script>
+    <script defer src="js/bootstrap-colorpicker.min.js"></script>
     <script defer src="js/jquery.slimscroll.min.js"></script>
     <script src="js/clipboard.min.js"></script>
     <script defer src="js/specialChar.js"></script>
-	<style>
-		body{font-family:'Apple SD Gothic Neo',sans-serif;font-size:1rem;}
-		h1{padding-top:10px;font-weight:700;}
-        .title { margin-top:20px; }
-        .title > div { display: flex;}
-        .title img { width:50px; height:50px; }
-        .title h1 { font-weight:300; font-size:2em; margin: 0 12px;}
-        .title h1 span { font-weight:700; margin-left:8px;}
-        .card-header{padding: .8rem 1rem;}
-        .card i {margin-right:5px;}
-        /* Slash in Path */
-        .pathLayout .select-row {display:flex;}
-        .pathLayout .select-row div {margin-right:15px;}
-		.custom-control{margin-top:5px;}
-		.custom-control-label{padding-top:2px;cursor:pointer;}
-        .copy-btn {display: block; position: absolute; bottom: 10px; right: 10px; border: solid 1px #d6d8db; padding: 4px 8px 2px; border-radius: 5px;}
-        .custom-control-input:checked~.custom-control-label::before { border-color: #B13B3E; background-color: #B13B3E;}
-        .pathHotkey > i { margin-right:6px;}
-        .pathHotkey > span { margin-bottom:8px; }
-        .unicodeDs,.pathDs,.{font-size:.8em;}
-        @media all and (min-width:768px) {
-            .pathHotkey > br { display:none;}
-            .pathHotkey > span { margin-right:10px; }
-        }
-        /* Special Character */
-        .accordion-button {padding: .6rem 1.25rem;}
-        .btn-default {color: #333; background-color: #fff; border-color: #ccc;}
-        .btn-character-sm {min-width: 35px !important; font-size: 18px; margin: 2px; padding: 4px 4px;}
-        .btn-default:hover {color: #333; background-color: #e6e6e6; border-color: #adadad;}
-        .btn-character-sm:hover {border: 0px solid white;}
-	</style>
+    <script defer src="js/script.js"></script>
 </head>
 <body>
 <div class="container-fluid">
-<!--	<form id="siiru" name="siiru" method="post" class="form-horizontal">-->
 	<div class="row title">
 		<div class="col-12">
-			<img src="/images/nuga_circle.png" alt="Persona" class="login-img" />
-			<h1>nugaBox<span>Util</span></h1>
+            <a href="https://nugabox.com"><img src="/images/nuga_circle.png" alt="Persona" class="login-img" /><h1>nugaBox</h1></a><h1><span>Util</span></h1>
 		</div>
 	</div>
-	<div class="row mt-3 pathLayout">
+    <div class="section row mt-3" id="myip">
+        <div class="col-12">
+            <div class="card">
+                <h5 class="card-header"><i class="fad fa-router" aria-hidden="true"></i> My IP</h5>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="alert alert-secondary mb-0" role="alert">
+                                <pre class="myipDs"><span class="text-success"><?=$_SERVER["REMOTE_ADDR"]?></span></pre>
+                                <a class="copy-btn" href="#" data-category="myip"><i class="fad fa-clipboard" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="section row mt-3" id="slash">
 		<div class="col-12">
 			<div class="card">
 				<h5 class="card-header"><i class="fad fa-keyboard" aria-hidden="true"></i> Slash in Path</h5>
 				<div class="card-body">
 					<div class="row">
-                        <label for="slashTp" class="col-2 col-lg-1 col-form-label text-right">선택</label>
-						<div class="col-10 col-lg-11 select-row">
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="slashTp1" name="slashTp" class="custom-control-input" value="slashTp1" checked>
-                                <label class="custom-control-label" for="slashTp1"> <i class="fab fa-windows" aria-hidden="true"></i> <i class="far fa-arrow-right" aria-hidden="true"></i> <i class="fab fa-apple" aria-hidden="true"></i> </label>
+                        <label for="slashTp" class="col-md-1 col-form-label text-right"></label>
+						<div class="col-12 col-md-11 select-row">
+                            <div class="form-check">
+                                <input type="radio" id="slashTp1" name="slashTp" class="form-check-input" value="slashTp1" checked>
+                                <label class="form-check-label" for="slashTp1"> <i class="fab fa-windows" aria-hidden="true"></i> <i class="far fa-arrow-right" aria-hidden="true"></i> <i class="fab fa-apple" aria-hidden="true"></i> </label>
                             </div>
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="slashTp2" name="slashTp" class="custom-control-input" value="slashTp2">
-                                <label class="custom-control-label" for="slashTp2"> <i class="fab fa-apple" aria-hidden="true"></i> <i class="far fa-arrow-right" aria-hidden="true"></i> <i class="fab fa-windows" aria-hidden="true"></i>  </label>
+                            <div class="form-check">
+                                <input type="radio" id="slashTp2" name="slashTp" class="form-check-input" value="slashTp2">
+                                <label class="form-check-label" for="slashTp2"> <i class="fab fa-apple" aria-hidden="true"></i> <i class="far fa-arrow-right" aria-hidden="true"></i> <i class="fab fa-windows" aria-hidden="true"></i>  </label>
                             </div>
-                            <div class="custom-control custom-switch custom-control-inline">
-                                <input type="checkbox" class="custom-control-input" id="cominPath" name="cominPath" value="Y" checked>
-                                <label class="custom-control-label" for="cominPath"> COMIN NAS</label>
+                            <div class="form-check form-switch">
+                                <input type="checkbox" class="form-check-input" id="cominPath" name="cominPath" value="Y" checked>
+                                <label class="form-check-label" for="cominPath"> COMIN NAS</label>
                             </div>
 						</div>
 					</div>
 					<div class="row mt-2">
-						<label for="keyword" class="col-2 col-lg-1 col-form-label text-right">경로</label>
-						<div class="col-10 col-lg-11">
+						<label for="keyword" class="col-2 col-md-1 col-form-label text-right">경로</label>
+						<div class="col-10 col-md-11">
 							<div class="input-group">
 								<input type="text" class="form-control" id="path" name="path" value="" placeholder="BackSlash(\) → Slash(/)">
-								<div class="input-group-append">
-                                    <button type="button" class="btn btn-secondary" data-action="U"><i class="far fa-exchange-alt"></i> 변환</button>
-								</div>
+                                <button type="button" class="btn btn-secondary" data-action="U"><i class="far fa-exchange-alt"></i> 변환</button>
 							</div>
 						</div>
 					</div>
@@ -104,7 +99,7 @@
 			</div>
 		</div>
 	</div>
-    <div class="row mt-3 specialLayout">
+    <div class="section row mt-3" id="specialChar">
         <div class="col-12">
             <div class="card">
                 <h5 class="card-header">
@@ -124,7 +119,150 @@
             </div>
         </div>
     </div>
-    <div class="row mt-3 unicodeLayout">
+    <div class="section row mt-3" id="signGen">
+        <div class="col-12">
+            <div class="card">
+                <h5 class="card-header"><i class="fad fa-id-card" aria-hidden="true"></i> E-mail Signature Generator</h5>
+                <div class="card-body">
+                    <form id="signForm" action="action.php" target="preview" method="post">
+                        <input type="hidden" name="action" value="P">
+                        <div class="row mt-2">
+                            <label for="sign-essential" class="col-3 col-md-2 col-form-label text-right">필수정보</label>
+                            <div class="col-9 col-md-10">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="sign-userNm" name="sign-userNm" value="장누가 선임">
+                                    <label for="sign-userNm">이름/직급</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <label for="sign-essential" class="col-3 col-md-2 col-form-label text-right"></label>
+                            <div class="col-9 col-md-10">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="sign-comNm" name="sign-comNm" value="(주)가민정보시스템">
+                                    <label for="sign-comNm">직장명</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <label for="sign-essential" class="col-3 col-md-2 col-form-label text-right"></label>
+                            <div class="col-9 col-md-10">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="sign-comTeam" name="sign-comTeam" value="정보기술연구소 프레임웍연구">
+                                    <label for="sign-comTeam">소속 부서</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <label for="sign-essential" class="col-3 col-md-2 col-form-label text-right"></label>
+                            <div class="col-9 col-md-10">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="sign-comAddr" name="sign-comAddr" value="광주광역시 동구 동계천로 76 가민정보 빌딩">
+                                    <label for="sign-comAddr">직장 주소</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <label for="sign-essential" class="col-3 col-md-2 col-form-label text-right"></label>
+                            <div class="col-9 col-md-10">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="sign-tel-com" name="sign-tel-com" value="062-653-2879">
+                                    <label for="sign-tel-com">직장 전화번호</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <label for="sign-essential" class="col-3 col-md-2 col-form-label text-right"></label>
+                            <div class="col-9 col-md-10">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="sign-tel-phone" name="sign-tel-phone" value="010-0000-0000">
+                                    <label for="sign-tel-phone">휴대 전화번호</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <label for="sign-essential" class="col-3 col-md-2 col-form-label text-right"></label>
+                            <div class="col-9 col-md-10">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="sign-email" name="sign-email" value="admin@nugabox.com">
+                                    <label for="sign-email">이메일</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <label for="sign-telinfo" class="col-3 col-md-2 col-form-label text-right">선택사항</label>
+                            <div class="col-9 col-md-10">
+                                <div class="input-group">
+                                    <div class="input-group-text col-5 col-md-2">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" id="sign-tel-faxYn" name="sign-tel-faxYn" value="N">
+                                            <label class="form-check-label" for="sign-tel-faxYn">FAX</label>
+                                        </div>
+                                    </div>
+                                    <input type="tel" class="form-control col-7 col-md-10" id="sign-tel-fax" name="sign-tel-fax" placeholder="직장 FAX번호" value="062-676-4869">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <label for="sign-telinfo" class="col-3 col-md-2 col-form-label text-right"></label>
+                            <div class="col-9 col-md-10">
+                                <div class="input-group">
+                                    <div class="input-group-text col-5 col-md-2">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" id="sign-tel-directYn" name="sign-tel-directYn" value="N">
+                                            <label class="form-check-label" for="sign-tel-directYn">직통</label>
+                                        </div>
+                                    </div>
+                                    <input type="tel" class="form-control col-7 col-md-10" id="sign-tel-direct" name="sign-tel-direct" placeholder="직통 전화번호" value="070-0000-0000">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <label for="sign-logo" class="col-3 col-md-2 col-form-label text-right">로고</label>
+                            <div class="col-9 col-md-10">
+                                <div class="form-floating">
+                                    <input type="url" class="form-control" id="sign-logo-url" name="sign-logo-url" value="https://i.imgur.com/hTu1xEo.png">
+                                    <label for="sign-logo-url">로고 이미지 URL</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <label for="sign-logo" class="col-3 col-md-2 col-form-label text-right"></label>
+                            <div class="col-9 col-md-10">
+                                <div class="form-floating">
+                                    <input type="url" class="form-control" id="sign-logo-link" name="sign-logo-link" value="https://www.comin.com">
+                                    <label for="sign-logo-link">로고 링크 URL</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <label for="sign-color" class="col-3 col-md-2 col-form-label text-right">컬러</label>
+                            <div class="col-9 col-md-10">
+                                <div class="input-group">
+                                    <input type="text" class="form-control input-lg" id="sign-colorCd" name="sign-colorCd" value="#A3282D"/>
+                                    <input type="color" class="form-control form-control-color" id="sign-color" value="#A3282D" title="Choose your color">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-12 text-end">
+                                <button type="button" class="btn btn-primary" data-action="G"><i class="far fa-magic"></i> 코드 생성</button>
+                                <button type="button" class="btn btn-secondary" data-action="P"><i class="far fa-browser"></i> 미리보기</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="alert alert-secondary mb-0" role="alert"><pre class="signGenDs"></pre></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section row mt-3" id="kor_uni">
         <div class="col-12">
             <div class="card">
                 <h5 class="card-header"><i class="fad fa-language" aria-hidden="true"></i> UniCode</h5>
@@ -134,9 +272,7 @@
                         <div class="col-9 col-lg-11">
                             <div class="input-group">
                                 <input type="text" class="form-control" id="kor" name="kor" value="">
-                                <div class="input-group-append">
-                                    <button type="button" class="btn btn-secondary" data-action="K"><i class="far fa-exchange-alt"></i> 변환</button>
-                                </div>
+                                <button type="button" class="btn btn-secondary" data-action="K"><i class="far fa-exchange-alt"></i> 변환</button>
                             </div>
                         </div>
                     </div>
@@ -145,9 +281,7 @@
                         <div class="col-9 col-lg-11">
                             <div class="input-group">
                                 <input type="text" class="form-control" id="unicode" name="unicode" value="">
-                                <div class="input-group-append">
-                                    <button type="button" class="btn btn-secondary" data-action="U"><i class="far fa-exchange-alt"></i> 변환</button>
-                                </div>
+                                <button type="button" class="btn btn-secondary" data-action="U"><i class="far fa-exchange-alt"></i> 변환</button>
                             </div>
                         </div>
                     </div>
@@ -162,173 +296,9 @@
             </div>
         </div>
     </div>
-<!--	</form>-->
+    <footer>
+        <p class="text-center mt-4">Copyright <script>document.write(new Date().getFullYear());</script> NUGABOX. All rights reserved.</p>
+    </footer>
 </div>
-<script>
-if(window.console!=undefined){
-    setTimeout(console.log.bind(console,"%c https://nugabox.github.io","font:2em Arial;color:#333;"),0);
-    setTimeout(console.log.bind(console,"%c ¯＼(º_o)/¯","font:8em Arial;color:#1e73be;font-weight:bold"),0);
-}
-$(document).ready(function() {
-    // 출력폼
-    $('.workDs,.pathDs').slimScroll({height:'50px',start:'bottom'});
-
-    // 유니코드 변환
-    $('.unicodeLayout .btn').click(function() {
-        var str = '';
-        if ($(this).data('action') == 'K') {
-            if ($.trim($('#kor').val()) != '') {
-                str = escape($.trim($('#kor').val()));
-                str = str.split("%").join("\\");
-                str = str.split("\\20").join(" ");
-                $('.unicodeDs').html('<span class="text-success">'+$.trim(str)+'</span>');
-            }
-        } else {
-            if ($.trim($('#unicode').val()) != '') {
-                str = $.trim($('#unicode').val());
-                str = unescape(str.split("\\").join("%"));
-                $('.unicodeDs').html('<span class="text-success">'+$.trim(str)+'</span>');
-            }
-        }
-    });
-
-    // 경로 변환
-    $('.pathLayout .btn').click(function() {
-        var str = '';
-        var slashTp = $(":input:radio[name=slashTp]:checked").val().right(1);
-        var cominPathYn = $('#cominPath').val();
-        var cominboxArr = ["dat", "datback", "hndvr", "lecture", "pgm", "photo"];
-        var cominfileArr = ["siiru", "devtools", "scan", "공공교육사업본부", "더블스타", "정보기술연구소", "제조금융사업본부"];
-
-        // BackSlash to Slash (Win -> Mac)
-        if (slashTp == '1' && $.trim($('#path').val()) != '') {
-            str = $.trim($('#path').val());
-            var strArr = str.split("\\");
-            // var strArr2 = strArr[2].toLowerCase();
-            // Comin NAS
-            if (cominPathYn == 'Y') {
-                if (strArr[2] == "cominfile" || strArr[2] == "cominbox" || strArr[2] == "cominFile" || strArr[2] == "cominBox" || strArr[2] == "192.168.1.7" || strArr[2] == "192.168.1.8") {
-                    strArr[2] = 'Volumes';
-                    strArr.splice(0, 1);
-                }
-            }
-            str = strArr.join("/");
-            $('.pathDs').html('<span class="text-success">' + $.trim(str) + '</span>');
-        }
-        // Slash to BackSlash (Mac -> Win)
-        else if (slashTp == '2' && $.trim($('#path').val()) != '') {
-            str = $.trim($('#path').val());
-            var strArr = str.split("/");
-            // Comin NAS
-            if (cominPathYn == 'Y') {
-                if (strArr[1] == 'Volumes') {
-                    if($.inArray(strArr[2], cominboxArr) != -1) {
-                        strArr[1] = '\\cominBox';
-                    } else if($.inArray(strArr[2], cominfileArr) != -1) {
-                        strArr[1] = '\\cominFile';
-                    }
-                }
-            }
-            str = strArr.join("\\");
-            $('.pathDs').html('<span class="text-success">' + $.trim(str) + '</span>');
-        }
-    });
-    $("input:radio[name=slashTp]").click(function() {
-        var slashTp = $(this).val().right(1);
-        if(slashTp == '1') $('#path').attr('placeholder',"BackSlash(\\) → Slash(/)");
-        else $('#path').attr('placeholder',"Slash(/) → BackSlash(\\)");
-    })
-    $('#cominPath').click(function(){
-        if($(this).val() == 'Y') $(this).val('N');
-        else $(this).val('Y');
-    })
-    $('.copy-btn').click(function(){
-        var category = $(this).data('category') + 'Ds';
-        var str = $('.'+category).children('.text-success').text();
-        copyToClipboard(str);
-    })
-
-    // 특수 기호
-    var specialCharOutput = "";
-    var char_idx = 1;
-    specialCharOutput += "<div class='accordion'>";
-    for(var key in specialChar){
-        specialCharOutput += "<div class='accordion-item' id='char"+char_idx+"'>";
-        specialCharOutput += "<h2 class='accordion-header' id='char"+char_idx+"-headingOne'>";
-        if(key == "도형 문자" || key == "문장 부호") {
-            specialCharOutput += "<button class='accordion-button' type='button' data-bs-toggle='collapse' data-bs-target='#char" + char_idx + "-collapseOne' aria-expanded='true' aria-controls='" + char_idx + "-collapseOne'>";
-            specialCharOutput += key;
-            specialCharOutput += "</button></h2>";
-            specialCharOutput += "<div id='char"+char_idx+"-collapseOne' class='accordion-collapse collapse show' aria-labelledby='char"+char_idx+"-headingOne'>";
-        }
-        else {
-            specialCharOutput += "<button class='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#char" + char_idx + "-collapseOne' aria-expanded='false' aria-controls='" + char_idx + "-collapseOne'>";
-            specialCharOutput += key;
-            specialCharOutput += "</button></h2>";
-            specialCharOutput += "<div id='char"+char_idx+"-collapseOne' class='accordion-collapse collapse' aria-labelledby='char"+char_idx+"-headingOne'>";
-        }
-        specialCharOutput += "<div class='accordion-body'>";
-
-        var charList = specialChar[key];
-        for(var idx in charList){
-            var char = charList[idx];
-            if(key == "공백"){
-                specialCharOutput += "<button type='button' class='btn btn-default btn-character-sm' value='"+char+"'><span style='background-color:#cbd5e0'>"+char+"</span></button>"
-            }else{
-                specialCharOutput += "<input type='button' class='btn btn-default btn-character-sm' value='"+char+"'/>"
-            }
-        }
-        specialCharOutput += "</div></div></div>";
-        char_idx++;
-    }
-    specialCharOutput += "</div>";
-    $("#specialCharOutput").html(specialCharOutput);
-});
-// 숫자 3자리 단위마다 콤마(comma)
-function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-}
-// right substr 사용하기
-String.prototype.right = function(length){
-    if(this.length <= length) return this;
-    else return this.substring(this.length - length, this.length);
-}
-// 클립보드 복사 함수
-function copyToClipboard(val) {
-    var t = document.createElement("textarea");
-    document.body.appendChild(t);
-    t.value = val;
-    t.select();
-    document.execCommand('copy');
-    document.body.removeChild(t);
-}
-// 특수문자 클릭 시 복사
-new ClipboardJS('#specialCharOutput .btn', {
-    text: function(trigger) {
-        $("#multiCopy input").val($("#multiCopy input").val()+trigger.getAttribute('value'));
-        $(trigger).tooltip({title: '복사 ✅', trigger: 'manual'});
-        $(trigger).tooltip('show');
-        setTimeout(function(){$(trigger).tooltip('hide');}, 1000);
-        return trigger.getAttribute('value');
-    }
-});
-// ajax 전송
-// function ajaxForm(outData) {
-//     $.ajax({
-//         type : 'post',
-//         url : '',
-//         data : $('#data').serialize(),
-//         dataType : 'json',
-//         success : function(data) {
-//             outData(data);
-//         }
-//     });
-// }
-// 화면 이동
-// function scrollMove(obj) {
-// 	var scmove = obj.offset().top;
-// 	$('html, body').animate({scrollTop : scmove}, 'slow');
-// }
-</script>
 </body>
 </html>

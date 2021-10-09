@@ -7,9 +7,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<link rel="icon" href="<?=$gs_imagesFolder?>favicon_dev2.ico">
-    <link rel="shortcut icon" href="<?=$gs_imagesFolder?>favicon_dev2.ico">
-    <link rel="apple-touch-icon" href="<?=$gs_imagesFolder?>favicon_dev2.ico">
+	<link rel="icon" href="<?=$gs_imagesFolder?>favicon.ico">
+    <link rel="shortcut icon" href="<?=$gs_imagesFolder?>favicon.ico">
+    <link rel="apple-touch-icon" href="<?=$gs_imagesFolder?>favicon.ico">
 	<title>DevLabs | nugaBox</title>
 
 	<!-- CSS -->
