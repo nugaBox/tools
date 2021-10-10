@@ -37,7 +37,7 @@
                 <li><a href="/tools" class="nav-link px-2 text-secondary">일반 도구</a></li>
                 <li><a href="/tools/dev" class="nav-link px-2 text-white">개발 도구</a></li>
                 <li class="dropdown ms-3">
-                    <a href="#" class="d-block link-light text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a href="javascript:;" class="d-block link-light text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="../images/nuga_circle.png" alt="mdo" width="32" height="32" class="rounded-circle">
                     </a>
                     <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
@@ -67,7 +67,7 @@
                         <div class="col-12">
                             <div class="alert alert-secondary mb-0" role="alert">
                                 <pre class="myipDs"><span class="text-success"><?=$_SERVER["REMOTE_ADDR"]?></span></pre>
-                                <a class="copy-btn" href="#" data-category="myip"><i class="fad fa-clipboard" aria-hidden="true"></i></a>
+                                <a class="copy-btn" href="javascript:;" data-category="myip"><i class="fad fa-clipboard" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
@@ -102,7 +102,7 @@
                 <div class="card-footer">
                     <div class="row">
                         <div class="col-12">
-                            <div class="alert alert-secondary mb-0" role="alert"><pre class="port_openDs"></pre><a class="copy-btn" href="#" data-category="port_open"><i class="fad fa-clipboard" aria-hidden="true"></i></a></div>
+                            <div class="alert alert-secondary mb-0" role="alert"><pre class="port_openDs"></pre><a class="copy-btn" href="javascript:;" data-category="port_open"><i class="fad fa-clipboard" aria-hidden="true"></i></a></div>
                         </div>
                     </div>
                 </div>
@@ -209,7 +209,7 @@
                 <div class="card-footer">
                     <div class="row">
                         <div class="col-12">
-                            <div class="alert alert-secondary mb-0" role="alert"><pre class="encoderDs"><span class="text-success"></span></pre><a class="copy-btn" href="#" data-category="encoder"><i class="fad fa-clipboard" aria-hidden="true"></i></a></div>
+                            <div class="alert alert-secondary mb-0" role="alert"><pre class="encoderDs"><span class="text-success"></span></pre><a class="copy-btn" href="javascript:;" data-category="encoder"><i class="fad fa-clipboard" aria-hidden="true"></i></a></div>
                         </div>
                     </div>
                 </div>
@@ -274,7 +274,7 @@
                 <div class="card-footer">
                     <div class="row">
                         <div class="col-12">
-                            <div class="alert alert-secondary mb-0" role="alert"><pre class="converterDs"></pre><a class="copy-btn" href="#" data-category="converter"><i class="fad fa-clipboard" aria-hidden="true"></i></a></div>
+                            <div class="alert alert-secondary mb-0" role="alert"><pre class="converterDs"></pre><a class="copy-btn" href="javascript:;" data-category="converter"><i class="fad fa-clipboard" aria-hidden="true"></i></a></div>
                         </div>
                     </div>
                 </div>
@@ -467,7 +467,7 @@
                 <div class="card-footer">
                     <div class="row">
                         <div class="col-12">
-                            <div class="alert alert-secondary mb-0" role="alert"><pre class="cryptoDs"></pre><a class="copy-btn" href="#" data-category="crypto"><i class="fad fa-clipboard" aria-hidden="true"></i></a></div>
+                            <div class="alert alert-secondary mb-0" role="alert"><pre class="cryptoDs"></pre><a class="copy-btn" href="javascript:;" data-category="crypto"><i class="fad fa-clipboard" aria-hidden="true"></i></a></div>
                         </div>
                     </div>
                 </div>

@@ -4,6 +4,11 @@ if(window.console!=undefined){
 }
 $(document).ready(function() {
     var crypto = require("crypto");
+    $('.copy-btn').click(function(){
+        var category = $(this).data('category') + 'Ds';
+        var str = $('.'+category).children('.text-success').text();
+        copyToClipboard(str);
+    })
 
     /**
      * 포트 오픈 확인

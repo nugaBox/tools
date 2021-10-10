@@ -5,6 +5,11 @@ if(window.console!=undefined){
 $(document).ready(function() {
     // 출력폼
     $('.workDs,.pathDs').slimScroll({height:'50px',start:'bottom'});
+    $('.copy-btn').click(function(){
+        var category = $(this).data('category') + 'Ds';
+        var str = $('.'+category).children('.text-success').text();
+        copyToClipboard(str);
+    })
 
     /**
      *  이메일 서명 생성기
@@ -97,11 +102,6 @@ $(document).ready(function() {
     $('#cominPath').click(function(){
         if($(this).val() == 'Y') $(this).val('N');
         else $(this).val('Y');
-    })
-    $('.copy-btn').click(function(){
-        var category = $(this).data('category') + 'Ds';
-        var str = $('.'+category).children('.text-success').text();
-        copyToClipboard(str);
     })
 
     /**

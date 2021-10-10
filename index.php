@@ -38,7 +38,7 @@
                 <li><a href="/tools" class="nav-link px-2 text-white">일반 도구</a></li>
                 <li><a href="/tools/dev" class="nav-link px-2 text-secondary">개발 도구</a></li>
                 <li class="dropdown ms-3">
-                    <a href="#" class="d-block link-light text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a href="javascript:;" class="d-block link-light text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="images/nuga_circle.png" alt="mdo" width="32" height="32" class="rounded-circle">
                     </a>
                     <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
@@ -99,7 +99,7 @@
 				<div class="card-footer">
 					<div class="row">
 						<div class="col-12">
-							<div class="alert alert-secondary mb-0" role="alert"><pre class="pathDs"></pre><a class="copy-btn" href="#" data-category="path"><i class="fad fa-clipboard" aria-hidden="true"></i></a></div>
+							<div class="alert alert-secondary mb-0" role="alert"><pre class="pathDs"></pre><a class="copy-btn" href="javascript:;" data-category="path"><i class="fad fa-clipboard" aria-hidden="true"></i></a></div>
                             <div class="mt-4 mb-2 pathHotkey"><i class="fas fa-keyboard" aria-hidden="true"></i> <span>경로 이동 단축키</span><br><kbd>Command + Shift + g</kbd> / <kbd><i class="fab fa-windows" aria-hidden="true"></i>(Win) + R</kbd></div>
 						</div>
 					</div>
