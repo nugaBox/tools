@@ -132,32 +132,93 @@ $(document).ready(function() {
         var str = '';
         // HASH
         if ($(this).data('category') == 'HASH') {
-            if ($.trim($('#crypto_hashOrgText').val()) != '') {
-                var orgText = $('#crypto_hashOrgText').val();
-                var algorithm = $('#crypto_hashAlgorithm').val();
+            if ($.trim($('#hashOrgText').val()) != '') {
+                var orgText = $('#hashOrgText').val();
+                var algorithm = $('#hashAlgorithm').val();
                 var hashText = crypto.createHash(algorithm).update(orgText, 'utf8').digest('hex');
                 str = hashText;
+                $('.cryptoDs').html('<span class="text-success">'+$.trim(str)+'</span>');
+            } else {
+                alert('암호화 할 텍스트를 입력하세요');
             }
         }
         // HMAC
-        else if ($(this).data('category') == 'HASH') {
-            if ($.trim($('#crypto_hashOrgText').val()) != '') {
-                var orgText = $('#crypto_hashOrgText').val();
-                var algorithm = $('#crypto_hashAlgorithm').val();
-                var hashText = crypto.createHash(algorithm).update(orgText, 'utf8').digest('hex');
-                str = hashText;
+        else if ($(this).data('category') == 'HMAC') {
+            if ($.trim($('#hmacOrgText').val()) != '') {
+                var orgText = $('#hmacOrgText').val();
+                var password = $('#hmacPassword').val();
+                var algorithm = $('#hmacAlgorithm').val();
+                var resultText = crypto.createHash(algorithm, password).update(orgText, 'utf8').digest('hex');
+                str = resultText;
+                $('.cryptoDs').html('<span class="text-success">'+$.trim(str)+'</span>');
+            } else {
+                alert('암호화 할 텍스트를 입력하세요');
             }
         }
-        // HMAC
-        else if ($(this).data('category') == 'HASH') {
-            if ($.trim($('#crypto_hashOrgText').val()) != '') {
-                var orgText = $('#crypto_hashOrgText').val();
-                var algorithm = $('#crypto_hashAlgorithm').val();
-                var hashText = crypto.createHash(algorithm).update(orgText, 'utf8').digest('hex');
-                str = hashText;
+        // PBKDF2
+        else if ($(this).data('category') == 'PBKDF2') {
+            if ($.trim($('#pbkdf2Password').val()) != '') {
+                var password = $('#pbkdf2Password').val();
+                var salt = $('#pbkdf2Salt').val();
+                var iterations = parseInt($('#pbkdf2Iterations').val());
+                var keylen = parseInt($('#pbkdf2Keylen').val());
+                var digest = $('#pbkdf2Algorithm').val();
+                crypto.pbkdf2(password, salt, iterations, keylen, digest, (err, derivedKey) => {
+                    if (err) console.log(err);
+                    str = derivedKey.toString('hex');
+                    $('.cryptoDs').html('<span class="text-success">'+$.trim(str)+'</span>');
+                });
+            } else {
+                alert('암호화 할 패스워드를 입력하세요');
             }
         }
-        $('.cryptoDs').html('<span class="text-success">'+$.trim(str)+'</span>');
+        // AES
+        else if ($(this).data('category') == 'AES') {
+            if ($(this).data('action') == 'E') {
+                if ($.trim($('#aesPlainText').val()) != '') {
+                    var mode = $("#aesMode").val();
+                    var keySize = $("#aesKeySize").val();
+                    var password = $("#aesSecretKey").val();
+                    var plainText = $("#aesPlainText").val();
+                    var cipher = crypto.createCipher('aes-'+keySize+'-'+mode, password);
+                    var encoding = $("#aesEncoding").val();
+                    var result = cipher.update(plainText, 'utf8', encoding);
+                    result += cipher.final(encoding);
+                    str = result;
+                    $('.cryptoDs').html('<span class="text-success">'+$.trim(str)+'</span>');
+                } else {
+                    alert('암호화 할 Plain Text를 입력하세요');
+                }
+            } else {
+                if ($.trim($('#aesCipherText').val()) != '') {
+                    var mode = $("#aesMode").val();
+                    var keySize = $("#aesKeySize").val();
+                    var password = $("#aesSecretKey").val();
+                    var cipherText = $("#aesCipherText").val();
+                    var encoding = $("#aesEncoding").val();
+                    try{
+                        var decipher = crypto.createDecipher('aes-'+keySize+'-'+mode, password);
+                        var result = decipher.update(cipherText, encoding, 'utf8');
+                        result += decipher.final('utf8');
+                        str = result;
+                        $('.cryptoDs').html('<span class="text-success">'+$.trim(str)+'</span>');
+                    }catch(e){
+                        alert(e.message);
+                    }
+                } else {
+                    alert('복호화 할 Cipher Key를 입력하세요');
+                }
+            }
+        }
+        // Random
+        else if ($(this).data('category') == 'RANDOM') {
+            var size = parseInt($("#randomSize").val());
+            var encoding = $("#randomEncoding").val();
+            crypto.randomBytes(size, function(err, buf){
+                str = buf.toString(encoding);
+                $('.cryptoDs').html('<span class="text-success">'+$.trim(str)+'</span>');
+            });
+        }
     });
 });
 // 숫자 3자리 단위마다 콤마(comma)

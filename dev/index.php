@@ -94,7 +94,7 @@
                         <div class="col-9 col-md-10">
                             <div class="input-group">
                                 <input type="number" class="form-control" id="open_port" name="open_port" placeholder="포트 번호" min="0" max="65535" value="80">
-                                <button type="button" class="btn btn-secondary" data-action="O"><i class="fad fa-check-circle"></i> 확인</button>
+                                <button type="button" class="btn btn-secondary" data-action="O"><i class="far fa-check"></i> 확인</button>
                             </div>
                         </div>
                     </div>
@@ -129,7 +129,7 @@
                                 <label for="enc_url" class="col-3 col-md-2 col-form-label text-right">Encoder</label>
                                 <div class="col-9 col-md-10">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="enc_url" name="enc_url" value="https://nugabox.com?name=누가" placeholder="https://nugabox.com?name=누가">
+                                        <input type="text" class="form-control" id="enc_url" name="enc_url" value="https://nugabox.com?name=누가" placeholder="">
                                         <button type="button" class="btn btn-secondary" data-category="URL" data-action="K"><i class="far fa-exchange-alt"></i> 변환</button>
                                     </div>
                                 </div>
@@ -138,7 +138,7 @@
                                 <label for="dec_url" class="col-3 col-md-2 col-form-label text-right">Decoder</label>
                                 <div class="col-9 col-md-10">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="dec_url" name="dec_url" value="https://nugabox.com?name=%EB%88%84%EA%B0%80" placeholder="https://nugabox.com?name=%EB%88%84%EA%B0%80">
+                                        <input type="text" class="form-control" id="dec_url" name="dec_url" value="https://nugabox.com?name=%EB%88%84%EA%B0%80" placeholder="">
                                         <button type="button" class="btn btn-secondary" data-category="URL" data-action="U"><i class="far fa-exchange-alt"></i> 변환</button>
                                     </div>
                                 </div>
@@ -149,7 +149,7 @@
                                 <label for="enc_html" class="col-3 col-md-2 col-form-label text-right">Encoder</label>
                                 <div class="col-9 col-md-10">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="enc_html" name="enc_html" value="<html>Hello World</html>" placeholder="<html>Hello World</html>">
+                                        <input type="text" class="form-control" id="enc_html" name="enc_html" value="<html>Hello World</html>" placeholder="">
                                         <button type="button" class="btn btn-secondary" data-category="HTML" data-action="K"><i class="far fa-exchange-alt"></i> 변환</button>
                                     </div>
                                 </div>
@@ -158,7 +158,7 @@
                                 <label for="dec_html" class="col-3 col-md-2 col-form-label text-right">Decoder</label>
                                 <div class="col-9 col-md-10">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="dec_html" name="dec_html" value="<?=htmlspecialchars('&lt;html&gt;Hello World&lt;/html&gt;');?>" placeholder="<?=htmlspecialchars('&lt;html&gt;Hello World&lt;/html&gt;');?>">
+                                        <input type="text" class="form-control" id="dec_html" name="dec_html" value="<?=htmlspecialchars('&lt;html&gt;Hello World&lt;/html&gt;');?>" placeholder="">
                                         <button type="button" class="btn btn-secondary" data-category="HTML" data-action="U"><i class="far fa-exchange-alt"></i> 변환</button>
                                     </div>
                                 </div>
@@ -169,7 +169,7 @@
                                 <label for="enc_base32" class="col-3 col-md-2 col-form-label text-right">Encoder</label>
                                 <div class="col-9 col-md-10">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="enc_base32" name="enc_base32" value="nugabox" placeholder="nugabox">
+                                        <input type="text" class="form-control" id="enc_base32" name="enc_base32" value="nugabox" placeholder="">
                                         <button type="button" class="btn btn-secondary" data-category="B32" data-action="K"><i class="far fa-exchange-alt"></i> 변환</button>
                                     </div>
                                 </div>
@@ -178,7 +178,7 @@
                                 <label for="dec_base32" class="col-3 col-md-2 col-form-label text-right">Decoder</label>
                                 <div class="col-9 col-md-10">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="dec_base32" name="dec_base32" value="NZ2WOYLCN54A====" placeholder="NZ2WOYLCN54A====">
+                                        <input type="text" class="form-control" id="dec_base32" name="dec_base32" value="NZ2WOYLCN54A====" placeholder="">
                                         <button type="button" class="btn btn-secondary" data-category="B32" data-action="U"><i class="far fa-exchange-alt"></i> 변환</button>
                                     </div>
                                 </div>
@@ -189,7 +189,7 @@
                                 <label for="enc_base64" class="col-3 col-md-2 col-form-label text-right">Encoder</label>
                                 <div class="col-9 col-md-10">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="enc_base64" name="enc_base64" value="nugabox" placeholder="nugabox">
+                                        <input type="text" class="form-control" id="enc_base64" name="enc_base64" value="nugabox" placeholder="">
                                         <button type="button" class="btn btn-secondary" data-category="B64" data-action="K"><i class="far fa-exchange-alt"></i> 변환</button>
                                     </div>
                                 </div>
@@ -198,7 +198,7 @@
                                 <label for="dec_base64" class="col-3 col-md-2 col-form-label text-right">Decoder</label>
                                 <div class="col-9 col-md-10">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="dec_base64" name="dec_base64" value="bnVnYWJveA==" placeholder="bnVnYWJveA==">
+                                        <input type="text" class="form-control" id="dec_base64" name="dec_base64" value="bnVnYWJveA==" placeholder="">
                                         <button type="button" class="btn btn-secondary" data-category="B64" data-action="U"><i class="far fa-exchange-alt"></i> 변환</button>
                                     </div>
                                 </div>
@@ -234,7 +234,7 @@
                                 <label for="uni_kor" class="col-3 col-md-2 col-form-label text-right">한글</label>
                                 <div class="col-9 col-md-10">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="uni_kor" name="uni_kor" value="">
+                                        <input type="text" class="form-control" id="uni_kor" name="uni_kor" value="누가">
                                         <button type="button" class="btn btn-secondary" data-category="UNI" data-action="K"><i class="far fa-exchange-alt"></i> 변환</button>
                                     </div>
                                 </div>
@@ -243,7 +243,7 @@
                                 <label for="uni_code" class="col-3 col-md-2 col-form-label text-right">UniCode</label>
                                 <div class="col-9 col-md-10">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="uni_code" name="uni_code" value="">
+                                        <input type="text" class="form-control" id="uni_code" name="uni_code" value="\uB204\uAC00">
                                         <button type="button" class="btn btn-secondary" data-category="UNI" data-action="U"><i class="far fa-exchange-alt"></i> 변환</button>
                                     </div>
                                 </div>
@@ -254,7 +254,7 @@
                                 <label for="puny_kor" class="col-3 col-md-2 col-form-label text-right">한글</label>
                                 <div class="col-9 col-md-10">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="puny_kor" name="puny_kor" value="">
+                                        <input type="text" class="form-control" id="puny_kor" name="puny_kor" value="누가박스.com">
                                         <button type="button" class="btn btn-secondary" data-category="PUNY" data-action="K"><i class="far fa-exchange-alt"></i> 변환</button>
                                     </div>
                                 </div>
@@ -263,7 +263,7 @@
                                 <label for="puny_code" class="col-3 col-md-2 col-form-label text-right">PunyCode</label>
                                 <div class="col-9 col-md-10">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="puny_code" name="puny_code" value="">
+                                        <input type="text" class="form-control" id="puny_code" name="puny_code" value="xn--o39a27i6wj5xg.com">
                                         <button type="button" class="btn btn-secondary" data-category="PUNY" data-action="U"><i class="far fa-exchange-alt"></i> 변환</button>
                                     </div>
                                 </div>
@@ -293,15 +293,16 @@
                             <button class="nav-link" id="nav-hmac-tab" data-bs-toggle="tab" data-bs-target="#nav-hmac" type="button" role="tab" aria-controls="nav-hmac" aria-selected="false">HMAC</button>
                             <button class="nav-link" id="nav-pbkdf2-tab" data-bs-toggle="tab" data-bs-target="#nav-pbkdf2" type="button" role="tab" aria-controls="nav-pbkdf2" aria-selected="false">PBKDF2</button>
                             <button class="nav-link" id="nav-aes-tab" data-bs-toggle="tab" data-bs-target="#nav-aes" type="button" role="tab" aria-controls="nav-aes" aria-selected="false">AES</button>
-                            <button class="nav-link" id="nav-randomString-tab" data-bs-toggle="tab" data-bs-target="#nav-randomString" type="button" role="tab" aria-controls="nav-randomString" aria-selected="false">RandomString</button>
+                            <button class="nav-link" id="nav-randomString-tab" data-bs-toggle="tab" data-bs-target="#nav-randomString" type="button" role="tab" aria-controls="nav-randomString" aria-selected="false">랜덤 String</button>
                         </div>
                     </nav>
                     <div class="tab-content mt-2 p-2" id="nav-cryptoContent">
+                        <!-- Hash -->
                         <div class="tab-pane fade show active" id="nav-hash" role="tabpanel" aria-labelledby="nav-hash-tab">
                             <div class="row mt-2">
-                                <label for="crypto_hashAlgorithm" class="col-3 col-md-2 col-form-label text-right">알고리즘</label>
+                                <label for="hashAlgorithm" class="col-3 col-md-2 col-form-label text-right">알고리즘</label>
                                 <div class="col-9 col-md-10">
-                                    <select class="form-control" id="crypto_hashAlgorithm" name="crypto_hashAlgorithm">
+                                    <select class="form-select" id="hashAlgorithm" name="hashAlgorithm">
                                         <option value="sha1" selected>SHA-1</option>
                                         <option value="sha224">SHA-224</option>
                                         <option value="sha256">SHA-256</option>
@@ -313,26 +314,153 @@
                                 </div>
                             </div>
                             <div class="row mt-2">
-                                <label for="crypto_hashOrgText" class="col-3 col-md-2 col-form-label text-right">텍스트</label>
+                                <label for="hashOrgText" class="col-3 col-md-2 col-form-label text-right">텍스트</label>
                                 <div class="col-9 col-md-10">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" id="crypto_hashOrgText" name="crypto_hashOrgText" value="hello world">
-                                        <button type="button" class="btn btn-secondary" data-category="HASH"><i class="far fa-exchange-alt"></i> 변환</button>
+                                        <input type="text" class="form-control" id="hashOrgText" name="hashOrgText" value="hello world">
+                                        <button type="button" class="btn btn-secondary" data-category="HASH"><i class="far fa-lock-alt"></i> 암호화</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <!-- HMAC -->
                         <div class="tab-pane fade" id="nav-hmac" role="tabpanel" aria-labelledby="nav-hmac-tab">
-
+                            <div class="row mt-2">
+                                <label for="hmacOrgText" class="col-3 col-md-2 col-form-label text-right">텍스트</label>
+                                <div class="col-9 col-md-10">
+                                    <input type="text" class="form-control" id="hmacOrgText" name="hmacOrgText" value="hello world">
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <label for="hmacAlgorithm" class="col-3 col-md-2 col-form-label text-right">알고리즘</label>
+                                <div class="col-9 col-md-10">
+                                    <select class="form-select" id="hmacAlgorithm" name="hmacAlgorithm">
+                                        <option value="sha1" selected>HMAC-SHA-1</option>
+                                        <option value="sha256">HMAC-SHA-256</option>
+                                        <option value="sha512">HMAC-SHA-512</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <label for="hmacPassword" class="col-3 col-md-2 col-form-label text-right">패스워드</label>
+                                <div class="col-9 col-md-10">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="hmacPassword" name="hmacPassword" value="password">
+                                        <button type="button" class="btn btn-secondary" data-category="HMAC"><i class="far fa-lock-alt"></i> 암호화</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        <!-- PBKDF2 -->
                         <div class="tab-pane fade" id="nav-pbkdf2" role="tabpanel" aria-labelledby="nav-pbkdf2-tab">
-
+                            <div class="row mt-2">
+                                <label for="pbkdf2Algorithm" class="col-3 col-md-2 col-form-label text-right">알고리즘</label>
+                                <div class="col-9 col-md-10">
+                                    <select class="form-select" id="pbkdf2Algorithm" name="pbkdf2Algorithm">
+                                        <option value="sha1" selected>HMAC-SHA-1</option>
+                                        <option value="sha256">HMAC-SHA-256</option>
+                                        <option value="sha512">HMAC-SHA-512</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <label for="pbkdf2Password" class="col-3 col-md-2 col-form-label text-right">패스워드</label>
+                                <div class="col-9 col-md-10">
+                                    <input type="text" class="form-control" id="pbkdf2Password" name="pbkdf2Password" value="password" placeholder="">
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <label for="pbkdf2Salt" class="col-3 col-md-2 col-form-label text-right">솔트</label>
+                                <div class="col-9 col-md-10">
+                                    <input type="text" class="form-control" id="pbkdf2Salt" name="pbkdf2Salt" value="salt" placeholder="">
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <label for="pbkdf2Salt" class="col-md-2 col-form-label text-right"></label>
+                                <div class="col-12 col-md-10">
+                                    <div class="input-group">
+                                        <label class="input-group-text" for="pbkdf2Iterations">반복</label>
+                                        <input type="number" class="form-control" id="pbkdf2Iterations" name="pbkdf2Iterations" value="100000" placeholder="">
+                                        <label class="input-group-text" for="pbkdf2Keylen">DLen</label>
+                                        <input type="number" class="form-control" id="pbkdf2Keylen" name="pbkdf2Keylen" value="16" placeholder="">
+                                        <button type="button" class="btn btn-secondary" data-category="PBKDF2"><i class="far fa-lock-alt"></i> 암호화</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        <!-- AES -->
                         <div class="tab-pane fade" id="nav-aes" role="tabpanel" aria-labelledby="nav-aes-tab">
-
+                            <div class="row mt-2">
+                                <label for="aesMode" class="col-3 col-md-2 col-form-label text-right">모드</label>
+                                <div class="col-9 col-md-10">
+                                    <select class="form-select" id="aesMode" name="aesMode">
+                                        <option value="cbc" selected>CBC (Cipher Block Chaining)</option>
+                                        <option value="ecb">ECB (Electronic Codebook)</option>
+                                        <option value="cfb">CFB (Cipher Feedback)</option>
+                                        <option value="ofb">OFB (Output Feedback)</option>
+                                        <option value="ctr">CTR (Counter)</option>
+                                        <option value="gcm">GCM (Galois/Counter Mode)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <label for="aesKeySize" class="col-3 col-md-2 col-form-label text-right">Key Size</label>
+                                <div class="col-9 col-md-10">
+                                    <select class="form-select" id="aesKeySize" name="aesKeySize">
+                                        <option value="128">128</option>
+                                        <option value="192">192</option>
+                                        <option value="256">256</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <label for="aesSecretKey" class="col-3 col-md-2 col-form-label text-right">Secret Key</label>
+                                <div class="col-9 col-md-10">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="aesSecretKey" name="aesSecretKey" value="SecretKey">
+                                        <label class="input-group-text" for="randomEncoding">인코딩</label>
+                                        <select class="form-select" id="aesEncoding" name="aesEncoding">
+                                            <option value="base64" selected>Base64</option>
+                                            <option value="hex">HEX</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <label for="aesPlainText" class="col-3 col-md-2 col-form-label text-right">Plain Text</label>
+                                <div class="col-9 col-md-10">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="aesPlainText" name="aesPlainText" value="nugabox">
+                                        <button type="button" class="btn btn-secondary" data-category="AES" data-action="E"><i class="far fa-lock-alt"></i> 암호화</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <label for="aesCipherText" class="col-3 col-md-2 col-form-label text-right">Cipher Text</label>
+                                <div class="col-9 col-md-10">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="aesCipherText" name="aesCipherText" value="CwgRDaBvabEWkCosyLvrhA==">
+                                        <button type="button" class="btn btn-secondary" data-category="AES" data-action="D"><i class="far fa-key"></i> 복호화</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        <!-- Random -->
                         <div class="tab-pane fade" id="nav-randomString" role="tabpanel" aria-labelledby="nav-randomString-tab">
-
+                            <div class="row mt-2">
+                                <div class="col-12">
+                                    <div class="input-group">
+                                        <label class="input-group-text" for="randomSize">Size</label>
+                                        <input type="number" class="form-control" id="randomSize" name="randomSize" value="16">
+                                        <label class="input-group-text" for="randomEncoding">인코딩</label>
+                                        <select class="form-select" id="randomEncoding" name="randomEncoding">
+                                            <option value="hex" selected>HEX</option>
+                                            <option value="base64">Base64</option>
+                                        </select>
+                                        <button type="button" class="btn btn-secondary" data-category="RANDOM"><i class="far fa-dice"></i> 생성</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
