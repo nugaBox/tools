@@ -1,10 +1,16 @@
 @charset "utf-8";
+/* Common Layout */
 body{font-family:'Apple SD Gothic Neo',sans-serif;font-size:1rem;}
 h1{padding-top:10px;font-weight:700;}
 header {--bs-bg-opacity: 1; background-color:#272b35}
 header .container {max-width: 900px; }
+footer {color: #606161}
+footer a {color: #606161; font-weight:bold; text-decoration: none;}
+
 .logo {width:300px;}
 .container-fluid { max-width: 900px; margin-bottom: 30px; }
+.bd-callout {padding: 1.25rem;margin-top: 1.25rem;margin-bottom: 1.25rem;border: 1px solid #e9ecef;border-left-width: .25rem; border-radius: .25rem;}
+.bd-callout-info {border-left-color: #5bc0de;}
 .title { margin-top:20px; }
 .title > div { display: flex;}
 .title a { display: flex; color: #000; text-decoration: none; }
@@ -13,13 +19,16 @@ header .container {max-width: 900px; }
 .title h1 span { font-weight:700;}
 .card-header{padding: .8rem 1rem;}
 .card i {margin-right:5px;}
-.section#myip .card-header {border-bottom: 0;}
-/* Slash in Path */
-.section#slash .select-row {display:flex;}
-.section#slash .select-row div {margin-right:7px;}
 .form-check{margin-top:5px;}
 .form-check-label{padding-top:2px;cursor:pointer;}
+.nav-link {color:#648ac1}
 .copy-btn {display: block; position: absolute; bottom: 10px; right: 10px; border: solid 1px #d6d8db; padding: 4px 8px 2px; border-radius: 5px;}
+.utterances {max-width:none}
+
+/* Card */
+.section#myip .card-header {border-bottom: 0;}
+.section#slash .select-row {display:flex;}
+.section#slash .select-row div {margin-right:7px;}
 .pathHotkey > i { margin-right:6px;}
 .pathHotkey > span { margin-bottom:8px; }
 .unicodeDs,.pathDs {font-size:.8em;}
@@ -28,22 +37,8 @@ header .container {max-width: 900px; }
     .pathHotkey > br { display:none;}
     .pathHotkey > span { margin-right:10px; }
 }
-/* Special Character */
 .accordion-button {padding: .6rem 1.25rem;}
 .btn-default {color: #333; background-color: #fff; border-color: #ccc;}
 .btn-character-sm {min-width: 35px !important; font-size: 18px; margin: 2px; padding: 4px 4px;}
 .btn-default:hover {color: #333; background-color: #e6e6e6; border-color: #adadad;}
 .btn-character-sm:hover {border: 0px solid white;}
-footer {color: #606161}
-footer a {color: #606161; font-weight:bold; text-decoration: none;}
-.bd-callout {
-    padding: 1.25rem;
-    margin-top: 1.25rem;
-    margin-bottom: 1.25rem;
-    border: 1px solid #e9ecef;
-    border-left-width: .25rem;
-    border-radius: .25rem;
-}
-.bd-callout-info {
-    border-left-color: #5bc0de;
-}

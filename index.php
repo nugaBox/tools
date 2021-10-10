@@ -5,9 +5,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex,nofollow" />
-    <meta name="description" content="누가의 유틸 모음">
+    <meta name="description" content="NUGA's Toolbox">
     <meta name="author" content="Nuga Jang">
-    <title>nugaBox | Util</title>
+    <title>NUGABOX Tools</title>
     <link rel="icon" href="images/favicon.ico">
     <link rel="shortcut icon" href="images/favicon.ico">
     <link rel="apple-touch-icon" href="images/favicon.ico">
@@ -19,7 +19,6 @@
     <script defer src="js/bootstrap.min.js"></script>
     <script defer src="js/bootstrap-colorpicker.min.js"></script>
     <script defer src="js/jquery.slimscroll.min.js"></script>
-    <script defer src="js/punycode.js"></script>
     <script src="js/clipboard.min.js"></script>
     <script defer src="js/specialChar.js"></script>
     <script defer src="js/script.js"></script>
@@ -57,7 +56,7 @@
 <div class="container-fluid">
     <div class="bd-callout bd-callout-info">
         <h3>Keep Going, Keep Smart</h3>
-        <h6>Last Update : 2021.10.10</h6>
+        <h6>Last Update : 2021-10-10</h6>
     </div>
 <!--	<div class="row title">-->
 <!--		<div class="col-12">-->
@@ -68,7 +67,7 @@
 	<div class="section row mt-3" id="slash">
 		<div class="col-12">
 			<div class="card">
-				<h5 class="card-header"><i class="fad fa-keyboard" aria-hidden="true"></i> Slash in Path</h5>
+				<h5 class="card-header"><i class="fad fa-keyboard" aria-hidden="true"></i> 디렉토리 경로 변환</h5>
 				<div class="card-body">
 					<div class="row">
                         <label for="slashTp" class="col-md-1 col-form-label text-right"></label>
@@ -115,7 +114,7 @@
                 <h5 class="card-header">
                     <div class="row">
                         <div class="col-12">
-                            <i class="fad fa-alicorn" aria-hidden="true"></i> Special Character
+                            <i class="fad fa-alicorn" aria-hidden="true"></i> 특수 문자
                         </div>
                     </div>
                 </h5>
@@ -133,7 +132,7 @@
     <div class="section row mt-3" id="signGen">
         <div class="col-12">
             <div class="card">
-                <h5 class="card-header"><i class="fad fa-id-card" aria-hidden="true"></i> HTML Signature Generator</h5>
+                <h5 class="card-header"><i class="fad fa-id-card" aria-hidden="true"></i> HTML 서명 생성기</h5>
                 <div class="card-body">
                     <form id="signForm" action="action.php" target="preview" method="post">
                         <input type="hidden" name="action" value="P">
@@ -272,6 +271,9 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="mt-5">
+        <script src="https://utteranc.es/client.js" repo="nugaBox/tools" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script>
     </div>
     <footer>
         <p class="text-center mt-4">Copyright <script>document.write(new Date().getFullYear());</script> <a href="https://nugabox.com" target="_blank">NUGABOX</a>. All rights reserved.</p>

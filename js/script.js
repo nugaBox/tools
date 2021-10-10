@@ -46,68 +46,6 @@ $(document).ready(function() {
     });
 
     /**
-     * 포트 오픈 확인
-     * @id port_open
-     */
-    $('.section#port_open .btn').click(function() {
-        // 코드 생성
-        if ($(this).data('action') == 'O') {
-            var open_ip = $('#open_ip').val();
-            var open_port = $('#open_port').val();
-            $.ajax({
-                url: "/tools/action.php",
-                type: "post",
-                data: {ip: open_ip, port:open_port, action:'O'}
-            }).done(function (data) {
-                $('.port_openDs').html('<span class="text-success">결과 : '+data+'</span>');
-            });
-        }
-    });
-
-    /**
-     * 유니코드 변환
-     * @id kor_uni
-     */
-    $('.section#kor_uni .btn').click(function() {
-        var str = '';
-        if ($(this).data('action') == 'K') {
-            if ($.trim($('#kor').val()) != '') {
-                str = escape($.trim($('#kor').val()));
-                str = str.split("%").join("\\");
-                str = str.split("\\20").join(" ");
-                $('.unicodeDs').html('<span class="text-success">'+$.trim(str)+'</span>');
-            }
-        } else {
-            if ($.trim($('#unicode').val()) != '') {
-                str = $.trim($('#unicode').val());
-                str = unescape(str.split("\\").join("%"));
-                $('.unicodeDs').html('<span class="text-success">'+$.trim(str)+'</span>');
-            }
-        }
-    });
-
-    /**
-     * 퓨니코드 변환
-     * @id kor_puny
-     */
-    $('.section#kor_puny .btn').click(function() {
-        var str = '';
-        if ($(this).data('action') == 'K') {
-            if ($.trim($('#korDomain').val()) != '') {
-                str = $.trim($('#korDomain').val());
-                str = punycode.toASCII(str);
-                $('.punycodeDs').html('<span class="text-success">'+$.trim(str)+'</span>');
-            }
-        } else {
-            if ($.trim($('#punycode').val()) != '') {
-                str = $.trim($('#punycode').val());
-                str = punycode.toUnicode(str);
-                $('.punycodeDs').html('<span class="text-success">'+$.trim(str)+'</span>');
-            }
-        }
-    });
-
-    /**
      * 경로 변환
      * @id slash
      */
@@ -244,6 +182,22 @@ new ClipboardJS('#specialCharOutput .btn', {
         return trigger.getAttribute('value');
     }
 });
+// 현재 시간
+function getCurrentTime() {
+    var date = new Date();
+    var year = date.getFullYear().toString();
+    var month = date.getMonth() + 1;
+    month = month < 10 ? '0' + month.toString() : month.toString();
+    var day = date.getDate();
+    day = day < 10 ? '0' + day.toString() : day.toString();
+    var hour = date.getHours();
+    hour = hour < 10 ? '0' + hour.toString() : hour.toString();
+    var minutes = date.getMinutes();
+    minutes = minutes < 10 ? '0' + minutes.toString() : minutes.toString();
+    var seconds = date.getSeconds();
+    seconds = seconds < 10 ? '0' + seconds.toString() : seconds.toString();
+    return year+'-'+month+'-'+day+' '+hour+':'+minutes+':'+seconds;
+}
 // ajax 전송
 // function ajaxForm(outData) {
 //     $.ajax({
