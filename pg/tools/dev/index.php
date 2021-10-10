@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex,nofollow" />
-    <meta name="description" content="누가의 유틸 모음">
+    <meta name="description" content="NUGA's Toolbox">
     <meta name="author" content="Nuga Jang">
     <title>nugaBox | Util</title>
     <link rel="icon" href="../images/favicon.ico">
