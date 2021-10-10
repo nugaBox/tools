@@ -30,7 +30,7 @@
 <header class="p-3 text-white">
     <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="/" class="d-flex align-items-center col-lg-6 mb-2 mb-lg-0 text-white text-decoration-none">
+            <a href="//dev.nugabox.com/tools" class="d-flex align-items-center col-lg-6 mb-2 mb-lg-0 text-white text-decoration-none">
                 <img src="images/banner_tools.png" alt="logo" class="logo" />
             </a>
             <div class="col-lg-2"></div>

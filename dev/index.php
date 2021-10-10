@@ -29,7 +29,7 @@
 <header class="p-3 text-white">
     <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="/" class="d-flex align-items-center col-lg-6 mb-2 mb-lg-0 text-white text-decoration-none">
+            <a href="//dev.nugabox.com/tools" class="d-flex align-items-center col-lg-6 mb-2 mb-lg-0 text-white text-decoration-none">
                 <img src="../images/banner_tools.png" alt="logo" class="logo" />
             </a>
             <div class="col-lg-2"></div>
@@ -126,81 +126,57 @@
                     <div class="tab-content mt-2 p-2" id="nav-encoderContent">
                         <div class="tab-pane fade show active" id="nav-url" role="tabpanel" aria-labelledby="nav-url-tab">
                             <div class="row mt-2">
-                                <label for="enc_url" class="col-3 col-md-2 col-form-label text-right">Encoder</label>
-                                <div class="col-9 col-md-10">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" id="enc_url" name="enc_url" value="https://nugabox.com?name=누가" placeholder="">
-                                        <button type="button" class="btn btn-secondary" data-category="URL" data-action="K"><i class="far fa-exchange-alt"></i> 변환</button>
-                                    </div>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="enc_url" name="enc_url" value="https://nugabox.com?name=누가" placeholder="">
+                                    <button type="button" class="btn btn-secondary" data-category="URL" data-action="K"><i class="far fa-redo"></i> 인코딩</button>
                                 </div>
                             </div>
                             <div class="row mt-2">
-                                <label for="dec_url" class="col-3 col-md-2 col-form-label text-right">Decoder</label>
-                                <div class="col-9 col-md-10">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" id="dec_url" name="dec_url" value="https://nugabox.com?name=%EB%88%84%EA%B0%80" placeholder="">
-                                        <button type="button" class="btn btn-secondary" data-category="URL" data-action="U"><i class="far fa-exchange-alt"></i> 변환</button>
-                                    </div>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="dec_url" name="dec_url" value="https://nugabox.com?name=%EB%88%84%EA%B0%80" placeholder="">
+                                    <button type="button" class="btn btn-secondary" data-category="URL" data-action="U"><i class="far fa-undo"></i> 디코딩</button>
                                 </div>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="nav-html" role="tabpanel" aria-labelledby="nav-html-tab">
                             <div class="row mt-2">
-                                <label for="enc_html" class="col-3 col-md-2 col-form-label text-right">Encoder</label>
-                                <div class="col-9 col-md-10">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" id="enc_html" name="enc_html" value="<html>Hello World</html>" placeholder="">
-                                        <button type="button" class="btn btn-secondary" data-category="HTML" data-action="K"><i class="far fa-exchange-alt"></i> 변환</button>
-                                    </div>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="enc_html" name="enc_html" value="<html>Hello World</html>" placeholder="">
+                                    <button type="button" class="btn btn-secondary" data-category="HTML" data-action="K"><i class="far fa-redo"></i> 인코딩</button>
                                 </div>
                             </div>
                             <div class="row mt-2">
-                                <label for="dec_html" class="col-3 col-md-2 col-form-label text-right">Decoder</label>
-                                <div class="col-9 col-md-10">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" id="dec_html" name="dec_html" value="<?=htmlspecialchars('&lt;html&gt;Hello World&lt;/html&gt;');?>" placeholder="">
-                                        <button type="button" class="btn btn-secondary" data-category="HTML" data-action="U"><i class="far fa-exchange-alt"></i> 변환</button>
-                                    </div>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="dec_html" name="dec_html" value="<?=htmlspecialchars('&lt;html&gt;Hello World&lt;/html&gt;');?>" placeholder="">
+                                    <button type="button" class="btn btn-secondary" data-category="HTML" data-action="U"><i class="far fa-undo"></i> 디코딩</button>
                                 </div>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="nav-base32" role="tabpanel" aria-labelledby="nav-base32-tab">
                             <div class="row mt-2">
-                                <label for="enc_base32" class="col-3 col-md-2 col-form-label text-right">Encoder</label>
-                                <div class="col-9 col-md-10">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" id="enc_base32" name="enc_base32" value="nugabox" placeholder="">
-                                        <button type="button" class="btn btn-secondary" data-category="B32" data-action="K"><i class="far fa-exchange-alt"></i> 변환</button>
-                                    </div>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="enc_base32" name="enc_base32" value="nugabox" placeholder="">
+                                    <button type="button" class="btn btn-secondary" data-category="B32" data-action="K"><i class="far fa-redo"></i> 인코딩</button>
                                 </div>
                             </div>
                             <div class="row mt-2">
-                                <label for="dec_base32" class="col-3 col-md-2 col-form-label text-right">Decoder</label>
-                                <div class="col-9 col-md-10">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" id="dec_base32" name="dec_base32" value="NZ2WOYLCN54A====" placeholder="">
-                                        <button type="button" class="btn btn-secondary" data-category="B32" data-action="U"><i class="far fa-exchange-alt"></i> 변환</button>
-                                    </div>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="dec_base32" name="dec_base32" value="NZ2WOYLCN54A====" placeholder="">
+                                    <button type="button" class="btn btn-secondary" data-category="B32" data-action="U"><i class="far fa-undo"></i> 디코딩</button>
                                 </div>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="nav-base64" role="tabpanel" aria-labelledby="nav-base64-tab">
                             <div class="row mt-2">
-                                <label for="enc_base64" class="col-3 col-md-2 col-form-label text-right">Encoder</label>
-                                <div class="col-9 col-md-10">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" id="enc_base64" name="enc_base64" value="nugabox" placeholder="">
-                                        <button type="button" class="btn btn-secondary" data-category="B64" data-action="K"><i class="far fa-exchange-alt"></i> 변환</button>
-                                    </div>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="enc_base64" name="enc_base64" value="nugabox" placeholder="">
+                                    <button type="button" class="btn btn-secondary" data-category="B64" data-action="K"><i class="far fa-redo"></i> 인코딩</button>
                                 </div>
                             </div>
                             <div class="row mt-2">
-                                <label for="dec_base64" class="col-3 col-md-2 col-form-label text-right">Decoder</label>
-                                <div class="col-9 col-md-10">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" id="dec_base64" name="dec_base64" value="bnVnYWJveA==" placeholder="">
-                                        <button type="button" class="btn btn-secondary" data-category="B64" data-action="U"><i class="far fa-exchange-alt"></i> 변환</button>
-                                    </div>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="dec_base64" name="dec_base64" value="bnVnYWJveA==" placeholder="">
+                                    <button type="button" class="btn btn-secondary" data-category="B64" data-action="U"><i class="far fa-undo"></i> 디코딩</button>
                                 </div>
                             </div>
                         </div>
