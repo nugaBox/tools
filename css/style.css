@@ -7,7 +7,7 @@ header {--bs-bg-opacity: 1; background-color:#272b35}
 header .container {max-width: 900px; }
 footer {color: #606161}
 footer a {color: #606161; font-weight:bold; text-decoration: none;}
-
+.bd-callout h6 span{background-color: #e2e2e2 !important;}
 .logo {width:300px;}
 .container-fluid { max-width: 900px; margin-bottom: 30px; }
 .bd-callout {padding: 1.25rem;margin-top: 1.25rem;margin-bottom: 1.25rem;border: 1px solid #e9ecef;border-left-width: .25rem; border-radius: .25rem;}
@@ -21,7 +21,7 @@ footer a {color: #606161; font-weight:bold; text-decoration: none;}
 .card-header{padding: .8rem 1rem;}
 .card i {margin-right:5px;}
 .form-check{margin-top:5px;}
-.form-check-label{padding-top:2px;cursor:pointer;}
+.form-check-label{cursor:pointer;}
 .nav-link {color:#648ac1}
 .copy-btn {display: block; position: absolute; bottom: 10px; right: 10px; border: solid 1px #d6d8db; padding: 4px 8px 2px; border-radius: 5px;}
 .utterances {max-width:none}

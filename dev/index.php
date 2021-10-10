@@ -55,7 +55,7 @@
 <div class="container-fluid">
     <div class="bd-callout bd-callout-info">
         <h3>Keep Going, Keep Smart</h3>
-        <h6>Last Update : 2021-10-10</h6>
+        <h6><span class="badge bg-light text-dark mt-2">Last Update_ 2021-10-11</span></h6>
     </div>
     <!-- IP 확인 -->
     <div class="section row mt-3" id="myip">
