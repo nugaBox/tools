@@ -7,6 +7,10 @@
     <meta name="robots" content="noindex,nofollow" />
     <meta name="description" content="NUGA's Toolbox">
     <meta name="author" content="Nuga Jang">
+    <meta property="og:image" content="/tools/images/meta_devtools.png">
+    <meta property="og:title" content="NUGABOX Tools">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Development Tools">
     <title>NUGABOX Tools</title>
     <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon_dev/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon_dev/favicon-32x32.png">
