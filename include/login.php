@@ -8,17 +8,23 @@ if(isset($_SESSION['user_id'])){
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="author" content="">
-<link rel="icon" href="<?=$gs_imagesFolder?>favicon.ico">
-<link rel="shortcut icon" href="<?=$gs_imagesFolder?>favicon_dev2.ico">
-<link rel="apple-touch-icon" href="<?=$gs_imagesFolder?>favicon_dev2.ico">
-<title>DevLabs | nugaBox</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" >
-<link rel="stylesheet" href="<?=$gs_cssFolder?>style.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image" content="/images/meta_devlabs.png">
+    <meta property="og:title" content="NUGABOX">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="made by NUGA">
+    <title>DevLabs | nugaBox</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="<?=$gs_imagesFolder?>favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?=$gs_imagesFolder?>favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?=$gs_imagesFolder?>favicon/favicon-16x16.png">
+    <link rel="manifest" href="<?=$gs_imagesFolder?>favicon/site.webmanifest">
+    <link rel="mask-icon" href="<?=$gs_imagesFolder?>favicon/safari-pinned-tab.svg" color="#272b35">
+    <meta name="msapplication-TileColor" content="#272b35">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" >
+    <link rel="stylesheet" href="<?=$gs_cssFolder?>style.css">
 </head>
 <body>
   <div class="wrap">
