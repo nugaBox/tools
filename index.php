@@ -59,8 +59,8 @@
 </header>
 <div class="container-fluid">
     <div class="bd-callout bd-callout-info">
-        <h3>Keep Going, Keep Smart</h3>
-        <h6><span class="badge bg-light text-dark mt-2">Last Update_ 2021-10-11</span></h6>
+        <h3>Stay Hungry, Stay Foolish.</h3>
+        <h6><span class="badge bg-light text-dark mt-2">Last Updated / 2021-10-11</span></h6>
     </div>
 <!--	<div class="row title">-->
 <!--		<div class="col-12">-->
@@ -279,7 +279,15 @@
             </div>
         </div>
     </div>
-    <div class="mt-5">
+    <div class="mt-5 p-3">
+        <div class="row">
+            <div class="col-6">
+                <h5><i class="fad fa-comments-alt"></i> Comments</h5>
+            </div>
+            <div class="col-6 text-end">
+                <a href="https://github.com/nugaBox" target="_blank"><h6><span class="badge bg-dark text-light mt-2"><i class="fab fa-github-alt"></i> nugaBox</span></h6></a>
+            </div>
+        </div>
         <script src="https://utteranc.es/client.js" repo="nugaBox/tools" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script>
     </div>
     <footer>

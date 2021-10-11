@@ -5,6 +5,7 @@ body{font-family:'Noto Sans KR',sans-serif; font-size:1rem;}
 h1{padding-top:10px;font-weight:700;}
 header {--bs-bg-opacity: 1; background-color:#272b35}
 header .container {max-width: 900px; }
+header .nav li {font-weight:500}
 footer {color: #606161}
 footer a {color: #606161; font-weight:bold; text-decoration: none;}
 .bd-callout h6 span{background-color: #e2e2e2 !important;}
@@ -45,3 +46,4 @@ footer a {color: #606161; font-weight:bold; text-decoration: none;}
 .btn-character-sm:hover {border: 0px solid white;}
 #converter label {padding-left:4px; padding-right:0}
 #crypto label {padding-left:4px; padding-right:0}
+#crypto .input-group-text {padding: .375rem .75rem}
