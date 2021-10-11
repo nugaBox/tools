@@ -8,9 +8,13 @@
     <meta name="description" content="NUGA's Toolbox">
     <meta name="author" content="Nuga Jang">
     <title>NUGABOX Tools</title>
-    <link rel="icon" href="images/favicon.ico">
-    <link rel="shortcut icon" href="images/favicon.ico">
-    <link rel="apple-touch-icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/site.webmanifest">
+    <link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#272b35">
+    <meta name="msapplication-TileColor" content="#272b35">
+    <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-colorpicker.min.css">
 	<link rel="stylesheet" href="css/fontAwesome.min.css">
@@ -69,23 +73,26 @@
 			<div class="card">
 				<h5 class="card-header"><i class="fad fa-keyboard" aria-hidden="true"></i> 디렉토리 경로 변환</h5>
 				<div class="card-body">
-					<div class="row">
-                        <label for="slashTp" class="col-md-1 col-form-label text-right"></label>
-						<div class="col-12 col-md-11 select-row">
-                            <div class="form-check">
+                    <div class="row mt-2">
+                        <label for="keyword" class="col-2 col-md-1 col-form-label text-right"></label>
+                        <div class="col-10 col-md-4">
+                            <div class="form-check form-check-inline">
                                 <input type="radio" id="slashTp1" name="slashTp" class="form-check-input" value="slashTp1" checked>
                                 <label class="form-check-label" for="slashTp1"> <i class="fab fa-windows" aria-hidden="true"></i> <i class="far fa-arrow-right" aria-hidden="true"></i> <i class="fab fa-apple" aria-hidden="true"></i> </label>
                             </div>
-                            <div class="form-check">
+                            <div class="form-check form-check-inline">
                                 <input type="radio" id="slashTp2" name="slashTp" class="form-check-input" value="slashTp2">
                                 <label class="form-check-label" for="slashTp2"> <i class="fab fa-apple" aria-hidden="true"></i> <i class="far fa-arrow-right" aria-hidden="true"></i> <i class="fab fa-windows" aria-hidden="true"></i>  </label>
                             </div>
+                        </div>
+                        <label for="keyword" class="col-2 col-md-1 col-form-label text-right"></label>
+                        <div class="col-6 col-md-4">
                             <div class="form-check form-switch">
                                 <input type="checkbox" class="form-check-input" id="cominPath" name="cominPath" value="Y" checked>
                                 <label class="form-check-label" for="cominPath"> COMIN NAS</label>
                             </div>
-						</div>
-					</div>
+                        </div>
+                    </div>
 					<div class="row mt-2">
 						<label for="keyword" class="col-2 col-md-1 col-form-label text-right">경로</label>
 						<div class="col-10 col-md-11">

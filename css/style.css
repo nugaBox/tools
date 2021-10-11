@@ -22,7 +22,7 @@ footer a {color: #606161; font-weight:bold; text-decoration: none;}
 .card i {margin-right:5px;}
 .form-check{margin-top:5px;}
 .form-check-label{cursor:pointer;}
-.nav-link {color:#648ac1}
+.nav-link {color:#0789b1}
 .copy-btn {display: block; position: absolute; bottom: 10px; right: 10px; border: solid 1px #d6d8db; padding: 4px 8px 2px; border-radius: 5px;}
 .utterances {max-width:none}
 
@@ -43,3 +43,5 @@ footer a {color: #606161; font-weight:bold; text-decoration: none;}
 .btn-character-sm {min-width: 35px !important; font-size: 18px; margin: 2px; padding: 4px 4px;}
 .btn-default:hover {color: #333; background-color: #e6e6e6; border-color: #adadad;}
 .btn-character-sm:hover {border: 0px solid white;}
+#converter label {padding-left:4px; padding-right:0}
+#crypto label {padding-left:4px; padding-right:0}

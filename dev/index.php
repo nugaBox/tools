@@ -8,9 +8,13 @@
     <meta name="description" content="NUGA's Toolbox">
     <meta name="author" content="Nuga Jang">
     <title>NUGABOX Tools</title>
-    <link rel="icon" href="../images/favicon.ico">
-    <link rel="shortcut icon" href="../images/favicon.ico">
-    <link rel="apple-touch-icon" href="../images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon_dev/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon_dev/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon_dev/favicon-16x16.png">
+    <link rel="manifest" href="../images/favicon_dev/site.webmanifest">
+    <link rel="mask-icon" href="../images/favicon_dev/safari-pinned-tab.svg" color="#272b35">
+    <meta name="msapplication-TileColor" content="#272b35">
+    <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
 	<link rel="stylesheet" href="../css/fontAwesome.min.css">
     <link rel="stylesheet" href="../css/style.css">
