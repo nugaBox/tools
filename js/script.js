@@ -9,7 +9,7 @@ $(document).ready(function() {
         var category = $(this).data('category') + 'Ds';
         var str = $('.'+category).children('.text-success').text();
         copyToClipboard(str);
-    })
+    });
 
     /**
      *  이메일 서명 생성기
@@ -45,7 +45,7 @@ $(document).ready(function() {
         }
         // 미리보기 (새창)
         else if ($(this).data('action') == 'P') {
-            win = open('','preview','width=550,height=300');
+            win = open('','preview','width=550,height=400');
             $('#signForm').submit();
         }
     });

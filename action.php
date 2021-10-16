@@ -12,10 +12,12 @@ try {
         $sign_tel_com = $_POST['sign-tel-com'];
         $sign_tel_phone = $_POST['sign-tel-phone'];
         $sign_email = $_POST['sign-email'];
+
         $sign_tel_direct = $_POST['sign-tel-direct'];
         $sign_tel_directYn = $_POST['sign-tel-directYn'];
         $sign_tel_fax = $_POST['sign-tel-fax'];
         $sign_tel_faxYn = $_POST['sign-tel-faxYn'];
+        $sign_warningYn = $_POST['sign-warningYn'];
         $sign_logo_url = $_POST['sign-logo-url'];
         $sign_logo_link = $_POST['sign-logo-link'];
         $sign_colorCd = $_POST['sign-colorCd'];
@@ -45,6 +47,9 @@ try {
         $sign_code.= '        <p style="margin:0;"><a href="mailto:'.$sign_email.'" style="color: #000; text-decoration: none;"><img src="https://i.imgur.com/7sB3tar.png" width="13px" alt="Email"> '.$sign_email.'</a></p>';
         $sign_code.= '    </span>';
         $sign_code.= '</div>';
+        if($sign_warningYn == 'Y' ) {
+            $sign_code .= '<div class="wrapper" style="width:480px;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 0px 10px;margin-top:15px;text-align:justify; color: #777; font-size: 12px; letter-spacing:-0.2px;">이 메일은 지정된 수취인만을 위해 작성되었으며, 중요한 정보나 저작권을 포함하고 있을 수 있습니다. 어떠한 권한 없이, 본 문서에 포함된 정보의 전부 또는 일부를 무단으로 제3자에게 공개, 배포, 복사 또는 사용하는 것을 엄격히 금지합니다. 만약 본 메일이 잘못 전송된 경우 발신인 또는 당사에 알려주시고 본 메일을 즉시 삭제하여 주시기 바랍니다.<br>This E-mail may contain confidential information and/or copyright material. This E-mail is intended for the use of the Addressee only. If you receive this E-mail by mistake, please delete it without reproducing, distributing or retaining.</p>';
+        }
         $result = $sign_code;
     }
     // 포트 오픈 확인

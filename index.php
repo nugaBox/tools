@@ -239,6 +239,20 @@
                             </div>
                         </div>
                         <div class="row mt-2">
+                            <label for="sign-select" class="col-3 col-md-2 col-form-label text-right"></label>
+                            <div class="col-9 col-md-10">
+                                <div class="input-group">
+                                    <div class="input-group-text col-5 col-md-2">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" id="sign-warningYn" name="sign-warningYn" value="N">
+                                            <label class="form-check-label" for="sign-warningYn">경고문구</label>
+                                        </div>
+                                    </div>
+                                    <input type="tel" class="form-control col-7 col-md-10" id="sign-warning" name="sign-warning" placeholder="경고문구" value="이 메일은 지정된 수취인만을 위해 작성되었으며, 중요한 정보나 저작권을 포함하고 있을 수 있습니다. 어떠한 권한 없이, 본 문서에 포함된 정보의 전부 또는 일부를 무단으로 제3자에게 공개, 배포, 복사 또는 사용하는 것을 엄격히 금지합니다. 만약 본 메일이 잘못 전송된 경우 발신인 또는 당사에 알려주시고 본 메일을 즉시 삭제하여 주시기 바랍니다. This E-mail may contain confidential information and/or copyright material. This E-mail is intended for the use of the Addressee only. If you receive this E-mail by mistake, please delete it without reproducing, distributing or retaining." disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
                             <label for="sign-logo" class="col-3 col-md-2 col-form-label text-right">로고</label>
                             <div class="col-9 col-md-10">
                                 <div class="form-floating">
@@ -271,6 +285,7 @@
                                 <button type="button" class="btn btn-secondary" data-action="P"><i class="far fa-browser"></i> 미리보기</button>
                             </div>
                         </div>
+                        <div class="col-12 mt-2 text-end"><small>※ 본 사이트의 입력값은 서버에 남지 않습니다.</small></div>
                     </form>
                 </div>
                 <div class="card-footer">
