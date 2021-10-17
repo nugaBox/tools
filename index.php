@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-colorpicker.min.css">
 	<link rel="stylesheet" href="css/fontAwesome.min.css">
+    <link rel="stylesheet" href="css/pretendardvariable.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery.min.js"></script>
     <script defer src="js/bootstrap.min.js"></script>
