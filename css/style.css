@@ -1,4 +1,6 @@
 @charset "utf-8";
+@font-face {font-family: 'Pretendard'; font-weight: 45 920; font-style: normal; font-display: swap; src: local('Pretendard Variable'), url('../fonts/PretendardVariable.woff2') format('woff2-variations')}
+
 /* Common Layout */
 body{font-family:'Pretendard',sans-serif; font-size:1rem;}
 h1{padding-top:10px;font-weight:700;}
