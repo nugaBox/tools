@@ -74,6 +74,8 @@ $(document).ready(function() {
                 }
             }
             str = strArr.join("/");
+            // 한글 자소분리 인코딩
+            str = str.normalize('NFC');
             $('.pathDs').html('<span class="text-success">' + $.trim(str) + '</span>');
         }
         // Slash to BackSlash (Mac -> Win)
@@ -91,6 +93,8 @@ $(document).ready(function() {
                 }
             }
             str = strArr.join("\\");
+            // 한글 자소분리 인코딩
+            str = str.normalize('NFC');
             $('.pathDs').html('<span class="text-success">' + $.trim(str) + '</span>');
         }
     });
@@ -103,6 +107,19 @@ $(document).ready(function() {
         if($(this).val() == 'Y') $(this).val('N');
         else $(this).val('Y');
     })
+
+    /**
+     * 한글 자소분리 변환
+     * @id hangul
+     */
+    $('.section#hangul .btn').click(function() {
+        var str = '';
+        str = $.trim($('#hangultxt').val());
+            
+        // 한글 자소분리 인코딩
+        str = str.normalize('NFC');
+        $('.hangulDs').html('<span class="text-success">' + $.trim(str) + '</span>');
+    });
 
     /**
      * 특수 기호

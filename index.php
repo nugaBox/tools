@@ -118,6 +118,31 @@
 			</div>
 		</div>
 	</div>
+    <!-- 한글 자소분리 변환 -->
+	<div class="section row mt-3" id="hangul">
+		<div class="col-12">
+			<div class="card">
+				<h5 class="card-header"><i class="fad fa-yin-yang" aria-hidden="true"></i> 한글 자소분리 변환</h5>
+				<div class="card-body">
+					<div class="row mt-2">
+						<div class="col-12">
+							<div class="input-group">
+								<input type="text" class="form-control" id="hangultxt" name="hangultxt" value="">
+                                <button type="button" class="btn btn-secondary" data-action="U"><i class="far fa-exchange-alt"></i> 변환</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card-footer">
+					<div class="row">
+						<div class="col-12">
+							<div class="alert alert-secondary mb-0" role="alert"><pre class="hangulDs"></pre><a class="copy-btn" href="javascript:;" data-category="hangul"><i class="fad fa-clipboard" aria-hidden="true"></i></a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
     <!-- 특수문자 -->
     <div class="section row mt-3" id="specialChar">
         <div class="col-12">
