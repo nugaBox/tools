@@ -52,8 +52,8 @@
                         <li><a class="dropdown-item" href="https://nugabox.com">NUGABOX</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="https://dev.nugabox.com" target="_blank">DevLabs</a></li>
-                        <li><a class="dropdown-item" href="https://wiki.nugabox.io/" target="_blank">개발위키</a></li>
-                        <li><a class="dropdown-item" href="https://velog.io/@nugabox" target="_blank">Velog</a></li>
+                        <li><a class="dropdown-item" href="https://nugabox.github.io" target="_blank">개발 로그</a></li>
+                        <li><a class="dropdown-item" href="https://wiki.nugabox.io" target="_blank">개발 위키</a></li>
                     </ul>
                 </li>
             </ul>
@@ -61,7 +61,7 @@
     </div>
 </header>
 <div class="container-fluid">
-    <div class="bd-callout bd-callout-info">
+    <div class="bd-callout bd-callout-success">
         <h3>Stay Hungry, Stay Foolish.</h3>
         <h6><span class="badge bg-light text-dark mt-2">Last Updated / 2021-10-11</span></h6>
     </div>
@@ -461,12 +461,13 @@
     <div class="mt-5 p-3">
         <div class="row">
             <div class="col-6">
-                <h5><i class="fad fa-comments-alt"></i> Comments</h5>
+                <h5><i class="fad fa-comments-alt"></i>  댓글</h5>
             </div>
             <div class="col-6 text-end">
                 <a href="https://github.com/nugaBox" target="_blank"><h6><span class="badge bg-dark text-light mt-2"><i class="fab fa-github-alt"></i> nugaBox</span></h6></a>
             </div>
         </div>
+        <small>필요한 도구 요청 및 문의 등을 남겨주세요</small>
         <script src="https://utteranc.es/client.js" repo="nugaBox/tools" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script>
     </div>
     <footer>
