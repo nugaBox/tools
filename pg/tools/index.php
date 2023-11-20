@@ -151,7 +151,7 @@
                 <div class="card-body">
                     <div class="row mt-2">
                         <div class="col-12">
-                            아래 경로를 복사해서 터미널에서 실행하세요
+                            아래 명령어를 복사해서 터미널에서 실행하세요
                         </div>
                     </div>
                 </div>
