@@ -13,7 +13,7 @@
         $seq = $_POST['seq'];
         
         // 설교내용 HTML DOM 파싱
-        $url = 'https://www.sooyoungro.org/main/new-layout/syrtv/worshipTextPopForm.jsp?lcode=01&mcode='.$mcode.'&regdate='.$regdate.'&seq='.$seq;
+        $url = 'https://www.sooyoungro.org/new-layout/syrtv/worshipTextPopForm.jsp?lcode=01&mcode='.$mcode.'&regdate='.$regdate.'&seq='.$seq;
         $str = file_get_html($url);
         // UTF-8 인코딩
         $enc = mb_detect_encoding($str, array('EUC-KR', 'UTF-8', 'shift_jis', 'CN-GB'));

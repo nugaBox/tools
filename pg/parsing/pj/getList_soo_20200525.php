@@ -12,7 +12,7 @@
         $targetNum = $_POST['targetNum'];
         
         // Web Json 읽어오기
-        $url = 'https://www.sooyoungro.org/main/new-layout/syrtv/HomWorshipTextServiceList.jsp?lcode='.$lcode.'&mcode='.$mcode.'&writerType='.$writerType.'&targetnum='.$targetNum;
+        $url = 'https://www.sooyoungro.org/new-layout/syrtv/HomWorshipTextServiceList.jsp?lcode='.$lcode.'&mcode='.$mcode.'&writerType='.$writerType.'&targetnum='.$targetNum;
         $json_string = file_get_contents($url);
         $R = json_decode($json_string, true);
         $listData = $R['company']['member'];
