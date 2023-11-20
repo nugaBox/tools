@@ -5,6 +5,11 @@ if(window.console!=undefined){
 $(document).ready(function() {
     // 출력폼
     $('.workDs,.pathDs').slimScroll({height:'50px',start:'bottom'});
+    $('.copy-btn').click(function(){
+        var category = $(this).data('category') + 'Ds';
+        var str = $('.'+category).children('.text-success').text();
+        copyToClipboard(str);
+    });
 
     /**
      *  이메일 서명 생성기
@@ -40,70 +45,8 @@ $(document).ready(function() {
         }
         // 미리보기 (새창)
         else if ($(this).data('action') == 'P') {
-            win = open('','preview','width=550,height=300');
+            win = open('','preview','width=550,height=400');
             $('#signForm').submit();
-        }
-    });
-
-    /**
-     * 포트 오픈 확인
-     * @id port_open
-     */
-    $('.section#port_open .btn').click(function() {
-        // 코드 생성
-        if ($(this).data('action') == 'O') {
-            var open_ip = $('#open_ip').val();
-            var open_port = $('#open_port').val();
-            $.ajax({
-                url: "/tools/action.php",
-                type: "post",
-                data: {ip: open_ip, port:open_port, action:'O'}
-            }).done(function (data) {
-                $('.port_openDs').html('<span class="text-success">결과 : '+data+'</span>');
-            });
-        }
-    });
-
-    /**
-     * 유니코드 변환
-     * @id kor_uni
-     */
-    $('.section#kor_uni .btn').click(function() {
-        var str = '';
-        if ($(this).data('action') == 'K') {
-            if ($.trim($('#kor').val()) != '') {
-                str = escape($.trim($('#kor').val()));
-                str = str.split("%").join("\\");
-                str = str.split("\\20").join(" ");
-                $('.unicodeDs').html('<span class="text-success">'+$.trim(str)+'</span>');
-            }
-        } else {
-            if ($.trim($('#unicode').val()) != '') {
-                str = $.trim($('#unicode').val());
-                str = unescape(str.split("\\").join("%"));
-                $('.unicodeDs').html('<span class="text-success">'+$.trim(str)+'</span>');
-            }
-        }
-    });
-
-    /**
-     * 퓨니코드 변환
-     * @id kor_puny
-     */
-    $('.section#kor_puny .btn').click(function() {
-        var str = '';
-        if ($(this).data('action') == 'K') {
-            if ($.trim($('#korDomain').val()) != '') {
-                str = $.trim($('#korDomain').val());
-                str = punycode.toASCII(str);
-                $('.punycodeDs').html('<span class="text-success">'+$.trim(str)+'</span>');
-            }
-        } else {
-            if ($.trim($('#punycode').val()) != '') {
-                str = $.trim($('#punycode').val());
-                str = punycode.toUnicode(str);
-                $('.punycodeDs').html('<span class="text-success">'+$.trim(str)+'</span>');
-            }
         }
     });
 
@@ -123,31 +66,38 @@ $(document).ready(function() {
             str = $.trim($('#path').val());
             var strArr = str.split("\\");
             // var strArr2 = strArr[2].toLowerCase();
-            // Comin NAS
+            // cominData
             if (cominPathYn == 'Y') {
-                if (strArr[2] == "cominfile" || strArr[2] == "cominbox" || strArr[2] == "cominFile" || strArr[2] == "cominBox" || strArr[2] == "192.168.1.7" || strArr[2] == "192.168.1.8") {
+                if (strArr[2] == "cominData" || strArr[2] == "comindata" || strArr[2] == "192.168.1.18") {
                     strArr[2] = 'Volumes';
                     strArr.splice(0, 1);
                 }
             }
             str = strArr.join("/");
+            // 한글 자소분리 인코딩
+            str = str.normalize('NFC');
             $('.pathDs').html('<span class="text-success">' + $.trim(str) + '</span>');
         }
         // Slash to BackSlash (Mac -> Win)
         else if (slashTp == '2' && $.trim($('#path').val()) != '') {
             str = $.trim($('#path').val());
             var strArr = str.split("/");
-            // Comin NAS
+            // cominData
             if (cominPathYn == 'Y') {
                 if (strArr[1] == 'Volumes') {
+                    /*
                     if($.inArray(strArr[2], cominboxArr) != -1) {
                         strArr[1] = '\\cominBox';
                     } else if($.inArray(strArr[2], cominfileArr) != -1) {
                         strArr[1] = '\\cominFile';
                     }
+                    */
+                    strArr[1] = '\\cominData';
                 }
             }
             str = strArr.join("\\");
+            // 한글 자소분리 인코딩
+            str = str.normalize('NFC');
             $('.pathDs').html('<span class="text-success">' + $.trim(str) + '</span>');
         }
     });
@@ -160,11 +110,19 @@ $(document).ready(function() {
         if($(this).val() == 'Y') $(this).val('N');
         else $(this).val('Y');
     })
-    $('.copy-btn').click(function(){
-        var category = $(this).data('category') + 'Ds';
-        var str = $('.'+category).children('.text-success').text();
-        copyToClipboard(str);
-    })
+
+    /**
+     * 한글 자소분리 변환
+     * @id hangul
+     */
+    $('.section#hangul .btn').click(function() {
+        var str = '';
+        str = $.trim($('#hangultxt').val());
+            
+        // 한글 자소분리 인코딩
+        str = str.normalize('NFC');
+        $('.hangulDs').html('<span class="text-success">' + $.trim(str) + '</span>');
+    });
 
     /**
      * 특수 기호
@@ -244,6 +202,22 @@ new ClipboardJS('#specialCharOutput .btn', {
         return trigger.getAttribute('value');
     }
 });
+// 현재 시간
+function getCurrentTime() {
+    var date = new Date();
+    var year = date.getFullYear().toString();
+    var month = date.getMonth() + 1;
+    month = month < 10 ? '0' + month.toString() : month.toString();
+    var day = date.getDate();
+    day = day < 10 ? '0' + day.toString() : day.toString();
+    var hour = date.getHours();
+    hour = hour < 10 ? '0' + hour.toString() : hour.toString();
+    var minutes = date.getMinutes();
+    minutes = minutes < 10 ? '0' + minutes.toString() : minutes.toString();
+    var seconds = date.getSeconds();
+    seconds = seconds < 10 ? '0' + seconds.toString() : seconds.toString();
+    return year+'-'+month+'-'+day+' '+hour+':'+minutes+':'+seconds;
+}
 // ajax 전송
 // function ajaxForm(outData) {
 //     $.ajax({
