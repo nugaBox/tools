@@ -1,157 +1,130 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OTT 서비스 모음</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Tesla OTT in NUGABOX</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/Footer-Basic.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.css">
+    <link rel="stylesheet" href="https://unpkg.com/@bootstrapstudio/bootstrap-better-nav/dist/bootstrap-better-nav.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicon/apple-icon-57x57.png"><link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/img/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 </head>
-<body class="gradient-bg min-h-screen transition-all duration-200">
-    <!-- 테마 전환 버튼 -->
-    <div class="fixed top-4 right-4 flex space-x-2 glass-effect p-2 rounded-lg shadow-lg z-50">
-        <!-- 라이트 모드 -->
-        <button onclick="setTheme('light')" class="theme-button p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700" data-theme="light" title="라이트 모드">
-            <svg class="w-6 h-6 text-gray-800 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-            </svg>
-        </button>
-        <!-- 다크 모드 -->
-        <button onclick="setTheme('dark')" class="theme-button p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700" data-theme="dark" title="다크 모드">
-            <svg class="w-6 h-6 text-gray-800 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-            </svg>
-        </button>
-        <!-- 시스템 모드 -->
-        <button onclick="setTheme('system')" class="theme-button p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700" data-theme="system" title="시스템 모드">
-            <svg class="w-6 h-6 text-gray-800 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-        </button>
-    </div>
 
-    <div class="container mx-auto px-4 py-8">
-        <h1 class="text-4xl font-bold text-center mb-12 text-black dark:text-white">
-            OTT 서비스 모음
-        </h1>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Netflix 카드 -->
-            <div class="group">
-                <div class="glass-effect rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
-                    <div class="h-2 bg-gradient-to-r from-red-500 to-red-700"></div>
-                    <div class="p-6 relative overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-br from-red-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <img src="https://assets.nflxext.com/us/ffe/siteui/common/icons/nficon2016.ico" alt="Netflix" 
-                             class="w-16 h-16 mb-4 transform transition-transform duration-300 group-hover:scale-110">
-                        <h2 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Netflix</h2>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4">영화, TV 프로그램, 애니메이션을 무제한으로 시청하세요.</p>
-                        <a href="https://www.netflix.com" target="_blank" 
-                           class="block text-center bg-gradient-to-r from-red-500 to-red-700 text-white py-2 px-4 rounded-lg 
-                                  transition-all duration-300 hover:shadow-lg">
-                            바로가기
-                        </a>
+<body>
+    <section class="d-flex flex-column justify-content-between" id="hero">
+        <div id="hero-top">
+            <nav class="navbar navbar-light navbar-expand-lg">
+                <div class="container-fluid">
+                    <a aria-label="Tesla Logo" class="tds-site-logo-link" href="/ko_kr">
+                        <svg class="tds-icon tds-icon-logo-wordmark tds-site-logo-icon" viewBox="0 0 342 35" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="currentColor" d="M0 .1a9.7 9.7 0 0 0 7 7h11l.5.1v27.6h6.8V7.3L26 7h11a9.8 9.8 0 0 0 7-7H0zm238.6 0h-6.8v34.8H263a9.7 9.7 0 0 0 6-6.8h-30.3V0zm-52.3 6.8c3.6-1 6.6-3.8 7.4-6.9l-38.1.1v20.6h31.1v7.2h-24.4a13.6 13.6 0 0 0-8.7 7h39.9v-21h-31.2v-7zm116.2 28h6.7v-14h24.6v14h6.7v-21h-38zM85.3 7h26a9.6 9.6 0 0 0 7.1-7H78.3a9.6 9.6 0 0 0 7 7m0 13.8h26a9.6 9.6 0 0 0 7.1-7H78.3a9.6 9.6 0 0 0 7 7m0 14.1h26a9.6 9.6 0 0 0 7.1-7H78.3a9.6 9.6 0 0 0 7 7M308.5 7h26a9.6 9.6 0 0 0 7-7h-40a9.6 9.6 0 0 0 7 7"></path>
+                        </svg>
+                    </a>
+                    <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1">
+                        <span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                    <div
+                        class="collapse navbar-collapse" id="navcol-1" style="font-size: 13px;font-family: Montserrat, sans-serif;font-weight: 600;text-transform: uppercase;">
+                        <ul class="nav navbar-nav mx-auto">
+                            </ul>
+                        <ul class="nav navbar-nav" id="signIn" style="text-align: right;">
+                            <li class="nav-item"><a class="nav-link nav_hover" href="https://nugabox.com"
+                                    style="text-align: left;color: #222;" target="_blank">NUGABOX</a></li>
+                        </ul>
+                </div>
+        </div>
+        </nav>
+        <h1 class="text-center" data-aos="fade-up" data-aos-duration="650" data-aos-once="true" id="title" style="font-size: 22px;">Tesla</h1>
+        <h2 class="text-center" data-aos="fade-up" data-aos-duration="700" data-aos-once="true" id="subtitle" style="font-size: 40px;font-family: Montserrat, sans-serif;">OTT 서비스 바로가기</h2>
+        </div>
+        <div id="hero-bottom">
+            <div class="container" style="max-width:1000px;">
+                <div class="row">
+                    <div class="col-8 offset-2" id="alignP">
+                        <p style="font-weight: 500;font-family: Montserrat, sans-serif;margin-bottom: 0;"><br>"사이트로 이동" 버튼을 클릭하여 <br>OTT 서비스를 전체화면으로 이용해보세요.<br><br></p>
                     </div>
                 </div>
-            </div>
-
-            <!-- YouTube 카드 -->
-            <div class="group">
-                <div class="glass-effect rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
-                    <div class="h-2 bg-gradient-to-r from-red-600 to-red-800"></div>
-                    <div class="p-6 relative overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-br from-red-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <img src="https://www.youtube.com/favicon.ico" alt="YouTube" 
-                             class="w-16 h-16 mb-4 transform transition-transform duration-300 group-hover:scale-110">
-                        <h2 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">YouTube</h2>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4">전 세계의 다양한 동영상 콘텐츠를 즐기세요.</p>
-                        <a href="https://www.youtube.com" target="_blank" 
-                           class="block text-center bg-gradient-to-r from-red-600 to-red-800 text-white py-2 px-4 rounded-lg 
-                                  transform transition-all duration-300 hover:shadow-lg hover:scale-105">
-                            바로가기
-                        </a>
+                <div class="row ott-card">
+                    <div class="col ott-card-box" data-url="https://www.netflix.com/kr">
+                        <div class="ott-icon" id="netflix"></div>
+                        <p id="p-top" style="font-size: 26px;font-weight: bold;font-family: Montserrat, sans-serif;margin-bottom: 0;">Netflix</p>
+                        <p id="p-bottom" style="font-size: 13px;">넷플릭스</p>
+                    </div>
+                    <div class="col ott-card-box" data-url="https://plex.nugabox.com">
+                        <div class="ott-icon" id="plex"></div>
+                        <p id="p-top-1" style="font-size: 26px;font-weight: bold;font-family: Montserrat, sans-serif;margin-bottom: 0;">Plex</p>
+                        <p id="p-bottom-1" style="font-size: 13px;">누플렉스</p>
+                    </div>
+                    <div class="col ott-card-box" data-url="https://play.coupang.com">
+                        <div class="ott-icon" id="coupangplay"></div>
+                        <p id="p-top-2" style="font-size: 26px;font-weight: bold;font-family: Montserrat, sans-serif;margin-bottom: 0;">Coupang Play</p>
+                        <p id="p-bottom-2" style="font-size: 13px;">쿠팡플레이</p>
+                    </div>
+                    <!-- <div class="col ott-card-box" data-url="https://www.disneyplus.com/ko-kr">
+                        <div class="ott-icon" id="disneyplus"></div>
+                        <p id="p-top" style="font-size: 26px;font-weight: bold;font-family: Montserrat, sans-serif;margin-bottom: 0;">Disney+</p>
+                        <p id="p-bottom" style="font-size: 13px;">디즈니플러스</p>
+                    </div> -->
+                    <div class="col ott-card-box" data-url="https://www.tving.com">
+                        <div class="ott-icon" id="tving"></div>
+                        <p id="p-top-1" style="font-size: 26px;font-weight: bold;font-family: Montserrat, sans-serif;margin-bottom: 0;">Tving</p>
+                        <p id="p-bottom-1" style="font-size: 13px;">티빙</p>
+                    </div>
+                    <div class="col ott-card-box" data-url="https://www.watcha.com">
+                        <div class="ott-icon" id="watcha"></div>
+                        <p id="p-top-2" style="font-size: 26px;font-weight: bold;font-family: Montserrat, sans-serif;margin-bottom: 0;">Watcha</p>
+                        <p id="p-bottom-2" style="font-size: 13px;">왓챠</p>
+                    </div>
+                    <div class="col ott-card-box" data-url="https://www.spotvnow.co.kr/">
+                        <div class="ott-icon" id="spotvnow"></div>
+                        <p id="p-top-2" style="font-size: 26px;font-weight: bold;font-family: Montserrat, sans-serif;margin-bottom: 0;">SPOTV Now</p>
+                        <p id="p-bottom-2" style="font-size: 13px;">스포티비 나우</p>
+                    </div>
+                    <div class="col ott-card-box" data-url="https://chzzk.naver.com/">
+                        <div class="ott-icon" id="chzzk"></div>
+                        <p id="p-top-2" style="font-size: 26px;font-weight: bold;font-family: Montserrat, sans-serif;margin-bottom: 0;">CHZZK</p>
+                        <p id="p-bottom-2" style="font-size: 13px;">치지직</p>
+                    </div>
+                    <div class="col ott-card-box" data-url="https://www.apple.com/kr/apple-tv-plus/">
+                        <div class="ott-icon" id="appletv"></div>
+                        <p id="p-top-2" style="font-size: 26px;font-weight: bold;font-family: Montserrat, sans-serif;margin-bottom: 0;">Apple TV+</p>
+                        <p id="p-bottom-2" style="font-size: 13px;">애플 TV+</p>
                     </div>
                 </div>
-            </div>
-
-            <!-- Plex 카드 -->
-            <div class="group">
-                <div class="glass-effect rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
-                    <div class="h-2 bg-gradient-to-r from-yellow-500 to-yellow-700"></div>
-                    <div class="p-6 relative overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-br from-yellow-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <img src="https://www.plex.tv/wp-content/uploads/2022/04/plex-favicon-32x32-1.png" alt="Plex" 
-                             class="w-16 h-16 mb-4 transform transition-transform duration-300 group-hover:scale-110">
-                        <h2 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Plex</h2>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4">나만의 미디어 서버로 콘텐츠를 스트리밍하세요.</p>
-                        <a href="https://www.plex.tv" target="_blank" 
-                           class="block text-center bg-gradient-to-r from-yellow-500 to-yellow-700 text-white py-2 px-4 rounded-lg 
-                                  transform transition-all duration-300 hover:shadow-lg hover:scale-105">
-                            바로가기
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Disney+ 카드 -->
-            <div class="group">
-                <div class="glass-effect rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
-                    <div class="h-2 bg-gradient-to-r from-blue-700 to-blue-900"></div>
-                    <div class="p-6 relative overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-br from-blue-700/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <img src="https://static-assets.bamgrid.com/product/disneyplus/favicon.ico" alt="Disney+" 
-                             class="w-16 h-16 mb-4 transform transition-transform duration-300 group-hover:scale-110">
-                        <h2 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Disney+</h2>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4">디즈니, 픽사, 마블, 스타워즈의 모든 콘텐츠를 만나보세요.</p>
-                        <a href="https://www.disneyplus.com" target="_blank" 
-                           class="block text-center bg-gradient-to-r from-blue-700 to-blue-900 text-white py-2 px-4 rounded-lg 
-                                  transform transition-all duration-300 hover:shadow-lg hover:scale-105">
-                            바로가기
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Wavve 카드 -->
-            <div class="group">
-                <div class="glass-effect rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
-                    <div class="h-2 bg-gradient-to-r from-purple-600 to-purple-800"></div>
-                    <div class="p-6 relative overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <img src="https://www.wavve.com/favicon.ico" alt="Wavve" 
-                             class="w-16 h-16 mb-4 transform transition-transform duration-300 group-hover:scale-110">
-                        <h2 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Wavve</h2>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4">국내 최고의 방송 콘텐츠를 언제 어디서나 시청하세요.</p>
-                        <a href="https://www.wavve.com" target="_blank" 
-                           class="block text-center bg-gradient-to-r from-purple-600 to-purple-800 text-white py-2 px-4 rounded-lg 
-                                  transform transition-all duration-300 hover:shadow-lg hover:scale-105">
-                            바로가기
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tving 카드 -->
-            <div class="group">
-                <div class="glass-effect rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
-                    <div class="h-2 bg-gradient-to-r from-red-500 to-red-700"></div>
-                    <div class="p-6 relative overflow-hidden">
-                        <div class="absolute inset-0 bg-gradient-to-br from-red-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <img src="https://www.tving.com/favicon.ico" alt="Tving" 
-                             class="w-16 h-16 mb-4 transform transition-transform duration-300 group-hover:scale-110">
-                        <h2 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Tving</h2>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4">CJ ENM의 다양한 오리지널 콘텐츠를 만나보세요.</p>
-                        <a href="https://www.tving.com" target="_blank" 
-                           class="block text-center bg-gradient-to-r from-red-500 to-red-700 text-white py-2 px-4 rounded-lg 
-                                  transform transition-all duration-300 hover:shadow-lg hover:scale-105">
-                            바로가기
-                        </a>
+                <div class="row mt-3 mb-3">
+                    <div class="col">
+                        <p style="font-size: 13px;font-family: Montserrat, sans-serif;margin-bottom: 0;">&copy; <script>document.write(new Date().getFullYear());</script> <strong>NUGABOX</strong>. All rights reserved.</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <script src="script.js"></script>
+    </section>
+    
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.js"></script>
+    <script src="https://unpkg.com/@bootstrapstudio/bootstrap-better-nav/dist/bootstrap-better-nav.min.js"></script>
 </body>
+
 </html>
