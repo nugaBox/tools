@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Tesla OTT in NUGABOX</title>
+    <title>Tesla in NUGABOX</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600">
     <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
@@ -45,7 +45,10 @@
                     <div
                         class="collapse navbar-collapse" id="navcol-1" style="font-size: 13px;font-family: Montserrat, sans-serif;font-weight: 600;text-transform: uppercase;">
                         <ul class="nav navbar-nav mx-auto">
-                            </ul>
+                            <li class="nav-item"><a class="nav-link nav_hover active">OTT</a></li>
+                            <li class="nav-item"><a class="nav-link nav_hover">TV</a></li>
+                            <li class="nav-item"><a class="nav-link nav_hover">Streaming</a></li>
+                        </ul>
                         <ul class="nav navbar-nav" id="signIn" style="text-align: right;">
                             <li class="nav-item"><a class="nav-link nav_hover" href="https://nugabox.com"
                                     style="text-align: left;color: #222;" target="_blank">NUGABOX</a></li>
@@ -54,65 +57,119 @@
         </div>
         </nav>
         <h1 class="text-center" data-aos="fade-up" data-aos-duration="650" data-aos-once="true" id="title" style="font-size: 22px;">Tesla</h1>
-        <h2 class="text-center" data-aos="fade-up" data-aos-duration="700" data-aos-once="true" id="subtitle" style="font-size: 40px;font-family: Montserrat, sans-serif;">OTT 서비스 바로가기</h2>
+        <h2 class="text-center" data-aos="fade-up" data-aos-duration="700" data-aos-once="true" id="subtitle" style="font-size: 40px;font-family: Montserrat, sans-serif;">전체화면 바로가기</h2>
         </div>
         <div id="hero-bottom">
             <div class="container" style="max-width:1000px;">
                 <div class="row">
                     <div class="col-8 offset-2" id="alignP">
-                        <p style="font-weight: 500;font-family: Montserrat, sans-serif;margin-bottom: 0;"><br>"사이트로 이동" 버튼을 클릭하여 <br>OTT 서비스를 전체화면으로 이용해보세요.<br><br></p>
+                        <p style="font-weight: 500;font-family: Montserrat, sans-serif;margin-bottom: 0;">
+                            <br>"사이트로 이동" 버튼을 클릭하여 <br>서비스를 전체화면으로 이용해보세요.<br><br>
+                        </p>
                     </div>
                 </div>
-                <div class="row ott-card">
-                    <div class="col ott-card-box" data-url="https://www.netflix.com/kr">
-                        <div class="ott-icon" id="netflix"></div>
-                        <p id="p-top" style="font-size: 26px;font-weight: bold;font-family: Montserrat, sans-serif;margin-bottom: 0;">Netflix</p>
-                        <p id="p-bottom" style="font-size: 13px;">넷플릭스</p>
+                <div class="card-container">
+
+                    <!-- OTT 리스트 -->
+                    <div class="row card-list" id="ott">
+                        <div class="col card-box" data-url="https://www.netflix.com/kr">
+                            <div class="card-icon" id="netflix"></div>
+                            <p class="card-title">Netflix</p>
+                            <p class="card-desc">넷플릭스</p>
+                        </div>
+                        <div class="col card-box" data-url="https://plex.nugabox.com">
+                            <div class="card-icon" id="plex"></div>
+                            <p class="card-title">Plex</p>
+                            <p class="card-desc">누플렉스</p>
+                        </div>
+                        <div class="col card-box" data-url="https://play.coupang.com">
+                            <div class="card-icon" id="coupangplay"></div>
+                            <p class="card-title">Coupang Play</p>
+                            <p class="card-desc">쿠팡플레이</p>
+                        </div>
+                        <div class="col card-box" data-url="https://www.disneyplus.com/ko-kr">
+                            <div class="card-icon" id="disneyplus"></div>
+                            <p class="card-title">Disney+</p>
+                            <p class="card-desc">디즈니플러스</p>
+                        </div>
+                        <div class="col card-box" data-url="https://www.apple.com/kr/apple-tv-plus/">
+                            <div class="card-icon" id="appletv"></div>
+                            <p class="card-title">Apple TV+</p>
+                            <p class="card-desc">애플 TV+</p>
+                        </div>
+                        <div class="col card-box" data-url="https://www.tving.com">
+                            <div class="card-icon" id="tving"></div>
+                            <p class="card-title">Tving</p>
+                            <p class="card-desc">티빙</p>
+                        </div>
+                        <div class="col card-box" data-url="https://www.watcha.com">
+                            <div class="card-icon" id="watcha"></div>
+                            <p class="card-title">Watcha</p>
+                            <p class="card-desc">왓챠</p>
+                        </div>
+                        <div class="col card-box" data-url="https://www.wavve.com/">
+                            <div class="card-icon" id="wavve"></div>
+                            <p class="card-title">Wavve</p>
+                            <p class="card-desc">웨이브</p>
+                        </div>
                     </div>
-                    <div class="col ott-card-box" data-url="https://plex.nugabox.com">
-                        <div class="ott-icon" id="plex"></div>
-                        <p id="p-top-1" style="font-size: 26px;font-weight: bold;font-family: Montserrat, sans-serif;margin-bottom: 0;">Plex</p>
-                        <p id="p-bottom-1" style="font-size: 13px;">누플렉스</p>
+
+                    <!-- TV 리스트 -->
+                    <div class="row card-list" id="tv">
+                        <div class="col card-box" data-url="https://onair.imbc.com">
+                            <div class="card-icon" id="mbc"></div>
+                            <p class="card-title">MBC</p>
+                            <p class="card-desc"></p>
+                        </div>
+                        <div class="col card-box" data-url="https://onair.kbs.co.kr">
+                            <div class="card-icon" id="kbs"></div>
+                            <p class="card-title">KBS 1TV</p>
+                            <p class="card-desc"></p>
+                        </div>
+                        <div class="col card-box" data-url="onair.kbs.co.kr%2Findex.html%3Fsname%3Donair%26stype%3Dlive%26ch_code%3D12%26ch_type%3DglobalList">
+                            <div class="card-icon" id="kbs"></div>
+                            <p class="card-title">KBS 2TV</p>
+                            <p class="card-desc"></p>
+                        </div>
+                        <div class="col card-box" data-url="https://www.sbs.co.kr/live/S01">
+                            <div class="card-icon" id="sbs"></div>
+                            <p class="card-title">SBS</p>
+                            <p class="card-desc"></p>
+                        </div>
+                        <div class="col card-box" data-url="https://onair.jtbc.co.kr">
+                            <div class="card-icon" id="jtbc"></div>
+                            <p class="card-title">JTBC</p>
+                            <p class="card-desc"></p>
+                        </div>
                     </div>
-                    <div class="col ott-card-box" data-url="https://play.coupang.com">
-                        <div class="ott-icon" id="coupangplay"></div>
-                        <p id="p-top-2" style="font-size: 26px;font-weight: bold;font-family: Montserrat, sans-serif;margin-bottom: 0;">Coupang Play</p>
-                        <p id="p-bottom-2" style="font-size: 13px;">쿠팡플레이</p>
-                    </div>
-                    <!-- <div class="col ott-card-box" data-url="https://www.disneyplus.com/ko-kr">
-                        <div class="ott-icon" id="disneyplus"></div>
-                        <p id="p-top" style="font-size: 26px;font-weight: bold;font-family: Montserrat, sans-serif;margin-bottom: 0;">Disney+</p>
-                        <p id="p-bottom" style="font-size: 13px;">디즈니플러스</p>
-                    </div> -->
-                    <div class="col ott-card-box" data-url="https://www.tving.com">
-                        <div class="ott-icon" id="tving"></div>
-                        <p id="p-top-1" style="font-size: 26px;font-weight: bold;font-family: Montserrat, sans-serif;margin-bottom: 0;">Tving</p>
-                        <p id="p-bottom-1" style="font-size: 13px;">티빙</p>
-                    </div>
-                    <div class="col ott-card-box" data-url="https://www.watcha.com">
-                        <div class="ott-icon" id="watcha"></div>
-                        <p id="p-top-2" style="font-size: 26px;font-weight: bold;font-family: Montserrat, sans-serif;margin-bottom: 0;">Watcha</p>
-                        <p id="p-bottom-2" style="font-size: 13px;">왓챠</p>
-                    </div>
-                    <div class="col ott-card-box" data-url="https://www.spotvnow.co.kr/">
-                        <div class="ott-icon" id="spotvnow"></div>
-                        <p id="p-top-2" style="font-size: 26px;font-weight: bold;font-family: Montserrat, sans-serif;margin-bottom: 0;">SPOTV Now</p>
-                        <p id="p-bottom-2" style="font-size: 13px;">스포티비 나우</p>
-                    </div>
-                    <div class="col ott-card-box" data-url="https://chzzk.naver.com/">
-                        <div class="ott-icon" id="chzzk"></div>
-                        <p id="p-top-2" style="font-size: 26px;font-weight: bold;font-family: Montserrat, sans-serif;margin-bottom: 0;">CHZZK</p>
-                        <p id="p-bottom-2" style="font-size: 13px;">치지직</p>
-                    </div>
-                    <div class="col ott-card-box" data-url="https://www.apple.com/kr/apple-tv-plus/">
-                        <div class="ott-icon" id="appletv"></div>
-                        <p id="p-top-2" style="font-size: 26px;font-weight: bold;font-family: Montserrat, sans-serif;margin-bottom: 0;">Apple TV+</p>
-                        <p id="p-bottom-2" style="font-size: 13px;">애플 TV+</p>
+
+                    <!-- Streaming 리스트 -->
+                    <div class="row card-list" id="streaming">
+                        <div class="col card-box" data-url="https://chzzk.naver.com/">
+                            <div class="card-icon" id="chzzk"></div>
+                            <p class="card-title">CHZZK</p>
+                            <p class="card-desc">치지직</p>
+                        </div>
+                        <div class="col card-box" data-url="https://www.afreecatv.com/">
+                            <div class="card-icon" id="afreecatv"></div>
+                            <p class="card-title">AfreecaTV</p>
+                            <p class="card-desc">아프리카TV</p>
+                        </div>
+                        <div class="col card-box" data-url="https://www.spotvnow.co.kr/">
+                            <div class="card-icon" id="spotvnow"></div>
+                            <p class="card-title">SPOTV Now</p>
+                            <p class="card-desc">스포티비 나우</p>
+                        </div>
+                        <div class="col card-box" data-url="https://sports.naver.com/">
+                            <div class="card-icon" id="naversports"></div>
+                            <p class="card-title">Naver Sports</p>
+                            <p class="card-desc">네이버 스포츠</p>
+                        </div>
                     </div>
                 </div>
                 <div class="row mt-3 mb-3">
                     <div class="col">
-                        <p style="font-size: 13px;font-family: Montserrat, sans-serif;margin-bottom: 0;">&copy; <script>document.write(new Date().getFullYear());</script> <strong>NUGABOX</strong>. All rights reserved.</p>
+                        <p class="copyright">&copy; <script>document.write(new Date().getFullYear());</script> <strong>NUGABOX</strong>. All rights reserved.</p>
                     </div>
                 </div>
             </div>

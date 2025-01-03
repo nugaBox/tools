@@ -209,11 +209,6 @@ body {
   margin-bottom: 120px;
 }
 
-.btn:not(:disabled):not(.disabled) {
-}
-
-footer-basic {
-}
 
 .footer-basic .reverse-button {
   align-items: center;
@@ -225,13 +220,21 @@ footer-basic {
   padding: 8px 20px;
 }
 
-#footer-button {
-}
 
 #vertical-line {
   width: 10px;
   height: 100%;
 }
+
+.nav-item:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
+.nav-item .active {
+  color: #fff;
+}
+
 .tds-icon {
   background: transparent;
   block-size: 24px;
@@ -270,14 +273,58 @@ footer-basic {
 .tds-icon-logo-wordmark {
   inline-size: calc(var(--tds-icon--size)* 5);
 }
-.ott-card {
-  display: flex;
+.card-list {
+  display: none;
   flex-wrap: wrap;
   margin-left: -10px;
   margin-right: -10px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-100%);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  position: absolute;
+  width: 100%;
 }
 
-.ott-card-box {
+.card-list.active {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.card-list.slide-right {
+  transform: translateX(100%);
+}
+
+.card-container {
+  position: relative;
+  min-height: 350px;
+  margin: 0 -10px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 60vh;
+}
+
+.card-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.card-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.card-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+.card-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.card-box {
   flex: 0 0 calc(25% - 20px);
   max-width: calc(25% - 20px);
   margin: 10px;
@@ -288,9 +335,13 @@ footer-basic {
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.ott-card-box:hover {
+.card-box:hover {
   text-decoration: none;
   color: #fff;
   cursor: pointer;
@@ -298,7 +349,7 @@ footer-basic {
   transform: scale(1.1);
 }
 
-.ott-icon {
+.card-icon {
   display: block;
   height: 40px;
   width: 40px;
@@ -310,26 +361,61 @@ footer-basic {
   background-repeat: no-repeat;
 }
 
-.ott-icon#netflix {background-image: url("../../assets/img/icons/playstore_netflix.png");}
-.ott-icon#plex {background-image: url("../../assets/img/icons/playstore_plex.png");}
-.ott-icon#coupangplay {background-image: url("../../assets/img/icons/playstore_coupangplay.png");}
-.ott-icon#disneyplus {background-image: url("../../assets/img/icons/playstore_disneyplus.png");}
-.ott-icon#tving {background-image: url("../../assets/img/icons/playstore_tving.png");}
-.ott-icon#watcha {background-image: url("../../assets/img/icons/playstore_watcha.png");}
-.ott-icon#spotvnow {background-image: url("../../assets/img/icons/playstore_spotvnow.png");}
-.ott-icon#chzzk {background-image: url("../../assets/img/icons/playstore_chzzk.png");}
-.ott-icon#appletv {background-image: url("../../assets/img/icons/playstore_appletv.png");}
+.card-title {
+  font-size: 26px;
+  font-weight: bold;
+  font-family: Montserrat, sans-serif;
+  margin-bottom: 0;
+}
+
+.card-desc {
+  font-size: 13px;
+  margin-bottom: 0;
+  min-height: 19px;
+}
 
 @media (max-width: 992px) {
-  .ott-card-box {
+  .card-box {
     flex: 0 0 calc(33.333% - 20px);
     max-width: calc(33.333% - 20px);
+    height: 110px;
   }
 }
 
 @media (max-width: 768px) {
-  .ott-card-box {
+  .card-box {
     flex: 0 0 calc(50% - 20px);
     max-width: calc(50% - 20px);
+    height: 100px;
   }
 }
+
+.copyright {
+  font-size: 13px;
+  font-family: Montserrat, sans-serif;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+/* ott */
+.card-icon#netflix {background-image: url("../../assets/img/icons/netflix.png");}
+.card-icon#plex {background-image: url("../../assets/img/icons/plex.png");}
+.card-icon#coupangplay {background-image: url("../../assets/img/icons/coupangplay.png");}
+.card-icon#disneyplus {background-image: url("../../assets/img/icons/disneyplus.png");}
+.card-icon#tving {background-image: url("../../assets/img/icons/tving.png");}
+.card-icon#watcha {background-image: url("../../assets/img/icons/watcha.png");}
+.card-icon#appletv {background-image: url("../../assets/img/icons/appletv.png");}
+.card-icon#wavve {background-image: url("../../assets/img/icons/wavve.png");}
+
+/* tv */
+.card-icon#mbc {background-image: url("../../assets/img/icons/mbc.png");}
+.card-icon#kbs {background-image: url("../../assets/img/icons/kbs.png");}
+.card-icon#sbs {background-image: url("../../assets/img/icons/sbs.png");}
+.card-icon#ebs {background-image: url("../../assets/img/icons/ebs.png");}
+.card-icon#jtbc {background-image: url("../../assets/img/icons/jtbc.jpg");}
+
+/* streaming */
+.card-icon#chzzk {background-image: url("../../assets/img/icons/chzzk.png");}
+.card-icon#afreecatv {background-image: url("../../assets/img/icons/afreecatv.png");}
+.card-icon#spotvnow {background-image: url("../../assets/img/icons/spotvnow.png");}
+.card-icon#naversports {background-image: url("../../assets/img/icons/naversports.png");}
