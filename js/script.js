@@ -66,9 +66,9 @@ $(document).ready(function() {
             str = $.trim($('#path').val());
             var strArr = str.split("\\");
             // var strArr2 = strArr[2].toLowerCase();
-            // Comin NAS
+            // cominData
             if (cominPathYn == 'Y') {
-                if (strArr[2] == "cominfile" || strArr[2] == "cominbox" || strArr[2] == "cominFile" || strArr[2] == "cominBox" || strArr[2] == "192.168.1.7" || strArr[2] == "192.168.1.8") {
+                if (strArr[2] == "cominData" || strArr[2] == "comindata" || strArr[2] == "192.168.1.18") {
                     strArr[2] = 'Volumes';
                     strArr.splice(0, 1);
                 }
@@ -82,14 +82,17 @@ $(document).ready(function() {
         else if (slashTp == '2' && $.trim($('#path').val()) != '') {
             str = $.trim($('#path').val());
             var strArr = str.split("/");
-            // Comin NAS
+            // cominData
             if (cominPathYn == 'Y') {
                 if (strArr[1] == 'Volumes') {
+                    /*
                     if($.inArray(strArr[2], cominboxArr) != -1) {
                         strArr[1] = '\\cominBox';
                     } else if($.inArray(strArr[2], cominfileArr) != -1) {
                         strArr[1] = '\\cominFile';
                     }
+                    */
+                    strArr[1] = '\\cominData';
                 }
             }
             str = strArr.join("\\");

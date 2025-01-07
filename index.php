@@ -64,7 +64,7 @@
 <div class="container-fluid">
     <div class="bd-callout bd-callout-info">
         <h3>Stay Hungry, Stay Foolish.</h3>
-        <h6><span class="badge bg-light text-dark mt-2">Last Updated / 2022-02-04</span></h6>
+        <h6><span class="badge bg-light text-dark mt-2">Last Updated / 2023-11-20</span></h6>
     </div>
 <!--	<div class="row title">-->
 <!--		<div class="col-12">-->
@@ -93,7 +93,7 @@
                         <div class="col-6 col-md-4">
                             <div class="form-check form-switch">
                                 <input type="checkbox" class="form-check-input" id="cominPath" name="cominPath" value="Y" checked>
-                                <label class="form-check-label" for="cominPath"> COMIN NAS</label>
+                                <label class="form-check-label" for="cominPath"> cominData</label>
                             </div>
                         </div>
                     </div>
@@ -143,6 +143,28 @@
 			</div>
 		</div>
 	</div>
+    <!-- 필수 패키지 설치 -->
+    <div class="section row mt-3" id="hangul">
+        <div class="col-12">
+            <div class="card">
+                <h5 class="card-header"><i class="fab fa-apple" aria-hidden="true"></i> macOS 필수 패키지 설치</h5>
+                <div class="card-body">
+                    <div class="row mt-2">
+                        <div class="col-12">
+                            아래 명령어를 복사해서 터미널에서 실행하세요
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="alert alert-secondary mb-0" role="alert"><pre class="essentialDs"><span class="text-success">bash <(curl -s https://raw.githubusercontent.com/nugaBox/essential/main/mac/essential.sh)</span></pre><a class="copy-btn" href="javascript:;" data-category="essential"><i class="fad fa-clipboard" aria-hidden="true"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- 특수문자 -->
     <div class="section row mt-3" id="specialChar">
         <div class="col-12">
