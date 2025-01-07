@@ -129,12 +129,15 @@ document.addEventListener('DOMContentLoaded', function() {
         navLink.addEventListener('click', function(e) {
             e.preventDefault();
             
-            const targetId = this.textContent.toLowerCase();
-            const direction = getSlideDirection(currentTab, targetId);
-            
-            updateNavigation(targetId);
-            showCardList(targetId, direction);
-            currentTab = targetId;
+            // nav-link 클래스가 있는 경우에만 탭 전환 처리
+            if (this.classList.contains('nav-link')) {
+                const targetId = this.textContent.toLowerCase();
+                const direction = getSlideDirection(currentTab, targetId);
+                
+                updateNavigation(targetId);
+                showCardList(targetId, direction);
+                currentTab = targetId;
+            }
         });
     });
 });
