@@ -128,17 +128,45 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.nav-link').forEach(function(navLink) {
         navLink.addEventListener('click', function(e) {
             e.preventDefault();
+            console.log('Nav link clicked:', this.textContent); // 클릭 이벤트 발생 확인
             
             // nav-link 클래스가 있는 경우에만 탭 전환 처리
             if (this.classList.contains('nav-link')) {
                 const targetId = this.textContent.toLowerCase();
                 const direction = getSlideDirection(currentTab, targetId);
                 
-                updateNavigation(targetId);
-                showCardList(targetId, direction);
-                currentTab = targetId;
+                // 모바일 메뉴가 열려있는 경우 닫기
+                const navbarCollapse = document.getElementById('navcol-1');
+                console.log('Navbar collapse state:', navbarCollapse.classList.contains('show')); // 메뉴 상태 확인
+                
+                if (navbarCollapse.classList.contains('show')) {
+                    try {
+                        // jQuery를 사용하여 메뉴 닫기
+                        $('#navcol-1').collapse('hide');
+                        
+                        // 메뉴가 닫힌 후 탭 전환
+                        setTimeout(() => {
+                            updateNavigation(targetId);
+                            showCardList(targetId, direction);
+                            currentTab = targetId;
+                            console.log('Tab changed to:', targetId); // 탭 전환 확인
+                        }, 350); // collapse 애니메이션 시간 고려
+                    } catch (error) {
+                        console.error('Error closing menu:', error);
+                    }
+                } else {
+                    // 메뉴가 닫혀있는 경우 바로 탭 전환
+                    updateNavigation(targetId);
+                    showCardList(targetId, direction);
+                    currentTab = targetId;
+                }
             }
         });
+    });
+
+    // Bootstrap collapse 이벤트 리스너 추가
+    $('#navcol-1').on('hidden.bs.collapse', function () {
+        console.log('Menu closed successfully'); // 메뉴가 성공적으로 닫혔는지 확인
     });
 });
 

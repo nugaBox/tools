@@ -243,6 +243,25 @@ body {
   color: rgba(255, 255, 255, 0.5);
 }
 
+.navbar-light .navbar-toggler {
+  padding: 4px 16px 8px;
+  background: rgba(0, 0, 0, .2);
+  border: none;
+  outline: none;
+}
+
+.navbar-light .navbar-toggler:hover {
+  background: rgba(0, 0, 0, .3);
+}
+
+
+.navbar-toggler-menu {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
 .tds-icon {
   background: transparent;
   block-size: 24px;
@@ -437,8 +456,8 @@ body {
 .card-icon#spotvnow {background-image: url("../../assets/img/icons/spotvnow.png");}
 .card-icon#naversports {background-image: url("../../assets/img/icons/naversports.png");}
 
-/* NUGABOX 링크 스타일 추가 */
-.nugabox-link {
+/* menu 링크 스타일 추가 */
+.menu-link {
     color: rgba(255, 255, 255, 0.5);
     padding: 0.5rem 1rem;
     display: block;
@@ -446,7 +465,45 @@ body {
     transition: color 0.3s ease;
 }
 
-.nugabox-link:hover {
+.menu-link:hover {
     color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
+}
+
+#side-menu .menu-link {
+   color: black;
+}
+
+/* 탭 네비게이션 스타일 추가 */
+.tab-navigation .nav-tabs {
+    background: transparent;
+    border: none;
+}
+
+.tab-navigation .nav-link {
+    color: rgba(255, 255, 255, 0.5);
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 13px;
+    font-family: Montserrat, sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.tab-navigation .nav-link:hover,
+.tab-navigation .nav-link.active {
+    color: rgba(255, 255, 255, 0.9);
+    background: transparent;
+    border: none;
+}
+
+/* 모바일 대응 */
+@media screen and (max-width: 740px) {
+    .tab-navigation .nav-link {
+        padding: 8px 15px;
+        margin: 0 5px;
+        font-size: 12px;
+    }
 }

@@ -51,17 +51,15 @@
                         </svg>
                     </a>
                     <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1">
-                        <span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                        <span class="sr-only">Toggle navigation</span><span class="navbar-toggler-menu">메뉴</span></button>
                     <div
                         class="collapse navbar-collapse" id="navcol-1" style="font-size: 13px;font-family: Montserrat, sans-serif;font-weight: 600;text-transform: uppercase;">
-                        <ul class="nav navbar-nav mx-auto">
-                            <li class="nav-item"><a class="nav-link nav_hover active">OTT</a></li>
-                            <li class="nav-item"><a class="nav-link nav_hover">TV</a></li>
-                            <li class="nav-item"><a class="nav-link nav_hover">Streaming</a></li>
+                        <ul class="nav navbar-nav mx-auto"> 
+                            <!-- <li class="nav-item"><a class="nav-link nav_hover active">OTT</a></li> -->
                         </ul>
                         <ul class="nav navbar-nav" id="signIn" style="text-align: right;">
                             <li class="nav-item">
-                                <a class="nugabox-link" href="https://nugabox.com" style="text-align: left;" target="_blank">NUGABOX</a>
+                                <a class="menu-link" href="https://nugabox.com" style="text-align: left;" target="_blank">NUGABOX</a>
                             </li>
                         </ul>
                 </div>
@@ -69,6 +67,7 @@
         </nav>
         <!-- <h1 class="text-center" data-aos="fade-up" data-aos-duration="650" data-aos-once="true" id="title" style="font-size: 22px;">Tesla</h1> -->
         <h2 class="text-center mt-5" data-aos="fade-up" data-aos-duration="700" data-aos-once="true" id="subtitle" style="font-size: 40px;font-family: Montserrat, sans-serif;">Tesla Full Screen</h2>
+        <h1 class="text-center" data-aos="fade-up" data-aos-duration="650" data-aos-once="true" id="title" style="font-size: 20px; font-weight: 600; font-family: Montserrat">전체화면 바로가기</h1>
         </div>
         <div id="hero-bottom">
             <div class="container" style="max-width:1000px;">
@@ -79,8 +78,21 @@
                         </p>
                     </div>
                 </div>
+                <div class="tab-navigation text-center mb-4">
+                    <ul class="nav nav-tabs justify-content-center border-0">
+                        <li class="nav-item">
+                            <a class="nav-link nav_hover active">OTT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav_hover">TV</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav_hover">STREAMING</a>
+                        </li>
+                    </ul>
+                </div>
                 <div class="card-container">
-
+                    
                     <!-- OTT 리스트 -->
                     <div class="row card-list" id="ott">
                         <div class="col card-box" data-url="https://www.netflix.com/kr">
